@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design of 5Star</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">Design of 5Star</div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#designs">Designs</a>
+            <a href="#help">Help</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Interactive Sliding -->
+    <section class="hero">
+        <div class="slider">
+            <div class="slides">
+                <img src="slide1.jpg" alt="Slide 1">
+                <img src="slide2.jpg" alt="Slide 2">
+                <img src="slide3.jpg" alt="Slide 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-box">Website UI Design</div>
+            <div class="service-box">Branding Posters</div>
+            <div class="service-box">Social Media Posters</div>
+            <div class="service-box">Landing Pages</div>
+            <div class="service-box">Video Posters</div>
+        </div>
+    </section>
+
+    <!-- Showcase Designs -->
+    <section id="designs" class="showcase">
+        <h2>Top Designs</h2>
+        <div class="design-gallery">
+            <img src="design1.jpg" alt="Design 1">
+            <img src="design2.jpg" alt="Design 2">
+            <img src="design3.jpg" alt="Design 3">
+        </div>
+    </section>
+
+    <section id="clients-collaborations" class="clients-collaborations">
+        <h2>Clients and Collaborations</h2>
+        <div class="stats-and-logos">
+            <!-- Statistics Section (Left Side) -->
+            <div class="stats">
+                <div class="stat-box">
+                    <p class="stat-number" data-target="150">0</p>
+                    <p>Clients</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-number" data-target="200">0</p>
+                    <p>Collaborations</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-number" data-target="300">0</p>
+                    <p>Designs</p>
+                </div>
+            </div>
+    
+            <!-- Logos Section (Right Side) -->
+            <div class="logos">
+                <img src="client1-logo.png" alt="Client 1 Logo">
+                <img src="client2-logo.png" alt="Client 2 Logo">
+                <img src="client3-logo.png" alt="Client 3 Logo">
+                <img src="client4-logo.png" alt="Client 4 Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-wrapper">
+            <button class="scroll-btn left-btn">&#10094;</button>
+            <div class="testimonial-container">
+                <div class="testimonial-box">
+                    <p class="testimonial-text">"Amazing service and quality!"</p>
+                    <p class="client-name">- John Doe</p>
+                </div>
+                <div class="testimonial-box">
+                    <p class="testimonial-text">"Highly recommend this!"</p>
+                    <p class="client-name">- Jane Smith</p>
+                </div>
+                <div class="testimonial-box">
+                    <p class="testimonial-text">"Fantastic experience!"</p>
+                    <p class="client-name">- Mark Wilson</p>
+                </div>
+                <div class="testimonial-box">
+                    <p class="testimonial-text">"Loved every bit of it!"</p>
+                    <p class="client-name">- Lisa Brown</p>
+                </div>
+                <div class="testimonial-box">
+                    <p class="testimonial-text">"Would buy again!"</p>
+                    <p class="client-name">- Alex Green</p>
+                </div>
+                <div class="testimonial-box">
+                    <p class="testimonial-text">"Five stars!"</p>
+                    <p class="client-name">- Emma White</p>
+                </div>
+            </div>
+            <button class="scroll-btn right-btn">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Social Media Links -->
+    <section id="contact" class="connect-us">
+        <div class="container">
+            <div class="contact-content">
+                <!-- Left side: Social Media Links -->
+                <div class="social-links">
+                    <h2>Connect with Us on Social Media</h2>
+                    <ul>
+                        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://www.behance.net" target="_blank"><i class="fab fa-behance"></i> Behance</a></li>
+                        <li><a href="https://dribbble.com" target="_blank"><i class="fab fa-dribbble"></i> Dribbble</a></li>
+                        <li><a href="https://www.figma.com" target="_blank"><i class="fab fa-figma"></i> Figma Community</a></li>
+                        <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+                        <li><a href="mailto:contact@yourdomain.com"><i class="fas fa-envelope"></i> Gmail</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Right side: Form -->
+                <div class="contact-form-container">
+                    <h2>Request a Design</h2>
+                    <form class="contact-form">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                        
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                        
+                        <label for="requirements">Requirements of Designs</label>
+                        <textarea id="requirements" rows="4" placeholder="Describe your design requirements" required></textarea>
+                        
+                        <button type="submit" class="submit-btn">Connect</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Design of 5Star | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
