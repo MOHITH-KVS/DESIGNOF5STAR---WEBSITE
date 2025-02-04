@@ -37,7 +37,7 @@
     <!-- Introduction Section -->
   <section class="intro">
      <h1 class="intro-text">
-        <span>Hello Stars,</span><br>
+        <span>Welcome Stars,</span><br>
         <span>I am 5Star,</span><br>
         <span>Your Designer</span>
      </h1>
@@ -65,18 +65,47 @@
             <div class="service-box">Social Media Posters</div>
             <div class="service-box">Landing Pages</div>
             <div class="service-box">Video Posters</div>
+            <div class="service-box">Visting Cards</div>
         </div>
     </section>
 
-    <!-- Showcase Designs -->
-    <section id="designs" class="showcase">
-        <h2>Top Designs</h2>
-        <div class="design-gallery">
-            <img src="design1.jpg" alt="Design 1">
-            <img src="design2.jpg" alt="Design 2">
-            <img src="design3.jpg" alt="Design 3">
+ <!-- Showcase Designs -->
+ <section id="designs" class="showcase">
+    <h2>Top Designs</h2>
+    <div class="design-gallery">
+        <div class="design-item">
+            <img src="./assests/figma trail 11 (1).png" alt="Landing Page">
+            <div class="view-message">View the design</div>
         </div>
-    </section>
+        <div class="design-item">
+            <img src="./assests/Desktop - 1 (6).png" alt="Web UI Design">
+            <div class="view-message">View the design</div>
+        </div>
+        <div class="design-item">
+            <img src="./assests/figma trail 11 (1).png" alt="Social Media Post">
+            <div class="view-message">View the design</div>
+        </div>
+        <div class="design-item">
+            <img src="./assests/Desktop - 1 (6).png" alt="Branding Post">
+            <div class="view-message">View the design</div>
+        </div>
+        <div class="design-item">
+            <img src="./assests/Desktop - 1 (6).png" alt="Branding Post">
+            <div class="view-message">View the design</div>
+        </div>
+    </div>
+    <button class="view-more-btn">View More</button>
+ </section>
+
+ <!-- Modal -->
+ <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="fullImage">
+    <div class="contact-message">Contact for designs, templates, links <br> Email: designsof5star@gmail.com</div>
+ </div>
+
+    
+
 
     <section id="clients-collaborations" class="clients-collaborations">
         <h2>Clients and Collaborations</h2>
@@ -142,44 +171,68 @@
         </div>
     </section>
 
-    <!-- Social Media Links -->
-    <section id="contact" class="connect-us">
-        <div class="container">
-            <div class="contact-content">
-                <!-- Left side: Social Media Links -->
-                <div class="social-links">
-                    <h2>Connect with Us on Social Media</h2>
-                    <ul>
-                        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                        <li><a href="https://www.behance.net" target="_blank"><i class="fab fa-behance"></i> Behance</a></li>
-                        <li><a href="https://dribbble.com" target="_blank"><i class="fab fa-dribbble"></i> Dribbble</a></li>
-                        <li><a href="https://www.figma.com" target="_blank"><i class="fab fa-figma"></i> Figma Community</a></li>
-                        <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
-                        <li><a href="mailto:contact@yourdomain.com"><i class="fas fa-envelope"></i> Gmail</a></li>
-                    </ul>
+  <!-- Social Media Links -->
+ <section id="contact" class="connect-us">
+    <div class="container">
+        <div class="contact-content">
+            <!-- Left side: Form -->
+            <div class="contact-form-container">
+                <h2>Request a Design</h2>
+                <form class="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    
+                    <label for="requirements">Requirements of Designs</label>
+                    <textarea id="requirements" rows="4" placeholder="Describe your design requirements" required></textarea>
+                    
+                    <button type="submit" class="submit-btn">Connect</button>
+                </form>
+            </div>
+
+            <!-- Right side: Social Media Links -->
+            <div class="social-links">
+                <div class="social-link">
+                    <a href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
                 </div>
-    
-                <!-- Right side: Form -->
-                <div class="contact-form-container">
-                    <h2>Request a Design</h2>
-                    <form class="contact-form">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Enter your name" required>
-                        
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Enter your email" required>
-                        
-                        <label for="requirements">Requirements of Designs</label>
-                        <textarea id="requirements" rows="4" placeholder="Describe your design requirements" required></textarea>
-                        
-                        <button type="submit" class="submit-btn">Connect</button>
-                    </form>
+                <div class="social-link">
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+                <div class="social-link">
+                    <a href="https://www.behance.net" target="_blank">
+                        <i class="fab fa-behance"></i> Behance
+                    </a>
+                </div>
+                <div class="social-link">
+                    <a href="https://dribbble.com" target="_blank">
+                        <i class="fab fa-dribbble"></i> Dribbble
+                    </a>
+                </div>
+                <div class="social-link">
+                    <a href="https://www.figma.com" target="_blank">
+                        <i class="fab fa-figma"></i> Figma Community
+                    </a>
+                </div>
+                <div class="social-link">
+                    <a href="https://www.youtube.com" target="_blank">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                </div>
+                <div class="social-link">
+                    <a href="mailto:contact@yourdomain.com">
+                        <i class="fas fa-envelope"></i> Gmail
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-    
+    </div>
+ </section>
 
 
     <!-- Footer -->
