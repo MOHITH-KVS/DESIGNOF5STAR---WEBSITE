@@ -75,7 +75,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 50vh;
-    background: #282828; /* Dark background for contrast */
+    background: url('./assests/sparkle\ video.gif') no-repeat center center; /* Background image */
+    background-size: cover; /* Ensures the image covers the entire section */
     color: white;
     text-align: center;
     padding: 20px;
@@ -83,82 +84,9 @@ body {
     box-shadow: 0 0 15px rgba(255, 102, 0, 0.8), 0 0 25px rgba(0, 0, 0, 0.8); /* Blurred border shadow */
 }
 
+/* Remove sparkle code here */
 
-.intro:hover {
-    animation: sparkleEffect 0.5s ease-out forwards; /* Trigger the sparkle animation when hovered */
-}
-
-/* Sparkle effect animation */
-@keyframes sparkleEffect {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Sparkles within the intro */
-.sparkle {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 102, 0, 1);
-    animation: sparkleAnimation 1.5s infinite;
-}
-
-@keyframes sparkleAnimation {
-    0% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-    50% {
-        transform: translate(30px, 30px);
-        opacity: 0.5;
-    }
-    100% {
-        transform: translate(-30px, -30px);
-        opacity: 0;
-    }
-}
-
-/* Background sparkle effect */
-.intro.sparkle-effect {
-    position: relative;
-}
-
-.intro.sparkle-effect::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: url('your-sparkle-image.png') no-repeat center center;
-    background-size: contain;
-    animation: sparkleAnimation 1s infinite;
-    pointer-events: none; /* Prevent interaction with the sparkle */
-}
-
-/* Sparkle Animation */
-@keyframes sparkleAnimation {
-    0% {
-        opacity: 0.5;
-        transform: scale(0.8);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0.5;
-        transform: scale(0.8);
-    }
-}
-
-
-
+/* Text and Animation Styling */
 .intro-text {
     font-size: 4rem;
     font-weight: bold;
@@ -225,7 +153,6 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-
 /* Tagline Styling */
 .intro-tagline {
     font-size: 1.5rem;
@@ -246,6 +173,7 @@ body {
         transform: translateY(0);
     }
 }
+
 
 
 
@@ -284,7 +212,7 @@ body {
 }
 
 #services h2 {
-    font-size: 2.5rem;
+    font-size: 40px;
     margin-bottom: 30px;
     color: orange;
 }
@@ -292,18 +220,19 @@ body {
 /* Services Container */
 .services-container {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: center; /* Centers the boxes in the row */
+    flex-wrap: wrap; /* Ensures the boxes wrap into the next row when space is unavailable */
     gap: 20px;
+    padding: 0 10%; /* Centers the content horizontally within the section */
 }
 
 /* Individual Service Box Styling */
 .service-box {
     background-color: #ffffff;
-    border: 1px solid orange;
+    border: 3px solid orange;
     padding: 10px;
     border-radius: 10px;
-    width: 200px;
+    width: 30%; /* Ensures three boxes per row */
     height: 100px;
     display: flex;
     justify-content: center;
@@ -317,15 +246,10 @@ body {
 
 /* Hover Effect */
 .service-box:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05) translateY(-10px);
     background-color: #ff6a00;
     color: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Hover Effect for Animated Scale */
-.service-box:hover {
-    transform: scale(1.05) translateY(-10px);
 }
 
 /* Responsive Design for Service Boxes */
@@ -333,35 +257,160 @@ body {
     .services-container {
         flex-direction: column;
         align-items: center;
+        padding: 0 5%; /* Adjust padding for smaller screens */
     }
 
     .service-box {
-        width: 80%;
+        width: 80%; /* Full width for small screens */
         margin-bottom: 20px;
     }
 }
 
 
-/* Showcase */
+
+/* Showcase Styling */
 .showcase {
     text-align: center;
-    padding: 50px;
-    background-color: #222222;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Add shadow to showcase */
-    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 30px;
+    color: orange;
 }
 
+#designs h2 {
+    font-size: 40px;
+}
+
+/* Design Gallery - Grid Layout */
 .design-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Automatically fills with boxes */
+    gap: 25px;
+    justify-items: center; /* Ensures each box is centered in its grid cell */
+    padding: 20px; /* Optional, adds padding inside the gallery */
 }
 
-.design-gallery img {
-    width: 300px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow to images */
+/* Design Item Styling */
+.design-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #e37002;
+    height: 250px; /* Fixed height */
+    width: 100%; /* Make sure it takes up the full available width in the grid */
 }
+
+/* Design Image Styling */
+.design-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures uniform size */
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.design-item:hover img {
+    transform: scale(1.05);
+}
+.view-message {
+    position: absolute;
+    bottom: 20px; /* Position at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the message horizontally */
+    background-color: rgba(247, 151, 7, 0.6);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    visibility: hidden;
+}
+/* Show the message when hovering over the design item */
+.design-item:hover .view-message {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal:hover .contact-message {
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-message {
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
+    background: rgba(236, 110, 7, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    text-align: center;
+}
+
+.view-more-btn {
+    background-color: orange; /* Matching the orange color theme */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.view-more-btn:hover {
+    background-color: #e37002; /* Darker orange for hover effect */
+}
+
+
 
 .clients-collaborations {
     padding: 50px 20px;
@@ -566,9 +615,6 @@ body {
     }
 }
 
-
-
-
 /* Social Media */
 .connect-us {
     background-color: #f1f1f1;
@@ -582,58 +628,16 @@ body {
 
 .connect-us h2 {
     font-size: 36px;
-    color: #333;
+    color: orange;
     margin-bottom: 20px;
+    text-align: center;
 }
 
+/* Flexbox Layout */
 .contact-content {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-}
-
-.social-links {
-    flex: 1;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.social-links h2 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.social-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.social-links ul li {
-    margin: 10px 0;
-    text-align: center;
-}
-
-.social-links ul li a {
-    font-size: 18px;
-    color: #333;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.social-links ul li a:hover {
-    color: #0073e6;
-}
-
-.social-links i {
-    font-size: 24px;
 }
 
 .contact-form-container {
@@ -641,12 +645,17 @@ body {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px orange;
+    transition: transform 0.3s ease;
+}
+
+.contact-form-container:hover {
+    transform: translateY(-10px); /* Hover effect to lift the form */
 }
 
 .contact-form-container h2 {
     font-size: 28px;
-    color: #333;
+    color: orange;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -659,7 +668,7 @@ body {
 
 .contact-form label {
     font-size: 16px;
-    color: #333;
+    color: black;
     text-align: left;
 }
 
@@ -667,24 +676,84 @@ body {
 .contact-form textarea {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid orangered;
     border-radius: 4px;
 }
 
 .contact-form .submit-btn {
-    background-color: #333;
-    color: white;
+    background-color: white;
+    color: orangered;
     padding: 15px;
     font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     align-self: center;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form .submit-btn:hover {
-    background-color: #555;
+    background-color: orange;
 }
+
+/* Social Media Links as Blocks */
+.social-links {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.social-links .social-link {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-links .social-link:hover {
+    transform: translateY(-10px); /* Hover effect to lift the card */
+    background-color: orange;
+}
+
+.social-links .social-link a {
+    font-size: 18px;
+    color: orangered;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links .social-link a:hover {
+    color: white;
+}
+
+.social-links i {
+    font-size: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column; /* Stack the form and social media links on mobile */
+        align-items: center;
+    }
+
+    .social-links {
+        grid-template-columns: 1fr; /* Single column layout on mobile */
+    }
+
+    .social-links .social-link {
+        width: 100%;
+    }
+}
+
+
 
 
 /* Footer */
