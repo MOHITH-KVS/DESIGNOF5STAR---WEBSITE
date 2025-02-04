@@ -65,4 +65,38 @@ document.addEventListener("DOMContentLoaded", function() {
             testimonialContainer.scrollBy({ left: 300, behavior: "smooth" });
         });
     }
+
+    // Modal Image Display with Pop-out Effect
+    function openModal(img) {
+        const modal = document.getElementById("imageModal");
+        const fullImage = document.getElementById("fullImage");
+        const contactMessage = document.querySelector(".contact-message");
+
+        fullImage.src = img.src;
+        modal.style.display = "flex";
+
+        // Ensure pop-out animation
+        fullImage.style.animation = "fadeIn 0.3s ease-in-out forwards";
+
+        // Show contact details only on hover
+        fullImage.addEventListener("mouseover", function () {
+            contactMessage.style.display = "block";
+        });
+
+        fullImage.addEventListener("mouseout", function () {
+            contactMessage.style.display = "none";
+        });
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+
+    document.querySelectorAll(".design-item img").forEach((img) => {
+        img.addEventListener("click", function () {
+            openModal(this);
+        });
+    });
+
+    document.querySelector(".close").addEventListener("click", closeModal);
 });
