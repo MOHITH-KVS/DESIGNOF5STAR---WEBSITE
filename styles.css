@@ -1,3 +1,4 @@
+
 /* General Styles */
 body {
     background-color: #121212;
@@ -410,43 +411,70 @@ body {
     background-color: #e37002; /* Darker orange for hover effect */
 }
 
+/* Contact Message Styling */
+.contact-message {
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
+    background: rgba(236, 110, 7, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center;
+}
 
+.contact-btn {
+    background-color: #e37002;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
 
+.contact-btn:hover {
+    background-color: #c56001;
+}
+
+/* Adjust the message paragraph */
+.contact-message p {
+    margin: 5px 0; /* Add some space between lines */
+}
+
+/* Adjust the "Contact Us" button for better spacing */
+.contact-message .contact-btn {
+    margin-top: 15px; /* Give extra space above the button */
+}
+
+/* Clients and Collaborations Section */
 .clients-collaborations {
     padding: 50px 20px;
     text-align: center;
     background-color: #333333;
 }
 
-.clients-collaborations h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
-}
-
+/* Stats and Logos Section */
 .stats-and-logos {
     display: flex;
-    justify-content: space-between; /* Distribute content between left and right */
+    justify-content: space-between; 
     align-items: center;
-    gap: 30px; /* Adds space between the left and right sections */
+    gap: 30px;
 }
 
-/* Stats Section */
 .stats {
     display: flex;
-    flex-direction: row;  /* Change to row for horizontal alignment */
-    justify-content: space-between;  /* Distribute items evenly */
-    gap: 30px;  /* Control the spacing between the stat boxes */
-    align-items: center; 
-    margin-left: 40px; /* Center align items vertically */
+    flex-direction: row; 
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    margin-left: 40px;
 }
 
-/* Logos Section */
-.logos {
-    display: flex;
-    justify-content: space-between;  /* Ensure logos are aligned horizontally */
-    gap: 20px;  /* Adjust the space between the logos */
-    flex-wrap: wrap;
-}
 
 /* Stat Box */
 .stat-box {
@@ -474,23 +502,7 @@ body {
     font-weight: bold;
 }
 
-.logos {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: flex-start; /* Align logos to the left on the right side */
-}
 
-.logos img {
-    width: 100px;
-    height: auto;
-    transition: all 0.3s ease;
-}
-
-.logos img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-}
 
 /* Testimonials */
 /* Testimonials Section */
@@ -752,8 +764,6 @@ body {
         width: 100%;
     }
 }
-
-
 
 
 /* Footer */
