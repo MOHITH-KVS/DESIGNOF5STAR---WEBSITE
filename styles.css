@@ -175,9 +175,6 @@ body {
     }
 }
 
-
-
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -458,31 +455,27 @@ body {
     background-color: #333333;
 }
 
-/* Stats and Logos Section */
-.stats-and-logos {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    gap: 30px;
+#clients-collaborations h2{
+    margin-top: -20px;
+    font-size: 40px;
+    color: orange;
 }
-
+/* Center Stats Section */
 .stats {
     display: flex;
-    flex-direction: row; 
-    justify-content: space-between;
+    justify-content: center; /* Center align */
     gap: 30px;
     align-items: center;
-    margin-left: 40px;
+    margin: 20px auto; /* Center the stats */
 }
-
 
 /* Stat Box */
 .stat-box {
-    background-color: black;
+    background-color: black ;
     border-radius: 10px;
     box-shadow: 0 4px 8px #FFA500;
     padding: 20px;
-    width: 150px;
+    width: 180px; /* Increase width */
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -492,15 +485,65 @@ body {
     box-shadow: 0 8px 16px orange;
 }
 
-.stat-box p {
-    margin: 0;
-    font-size: 1.2rem;
+/* Increase Stat Number Size */
+.stat-number {
+    font-size: 100px !important; /* Increased size */
+    font-weight: bold !important;
+    color: orange !important;
 }
 
-.stat-number {
-    font-size: 2rem;
-    font-weight: bold;
+.stat-box p {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
 }
+
+/* Auto-Scrolling Logo Section */
+.logo-container {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Individual Logo Box */
+.logo-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.6);
+    flex-shrink: 0; /* Prevents resizing */
+    margin-right: 20px; /* Spacing */
+}
+
+.logo-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Scroll Animation */
+@keyframes scrollLogos {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.logo-container {
+    display: flex;
+    animation: scrollLogos 10s linear infinite;
+}
+
+
 
 
 
@@ -694,10 +737,11 @@ body {
 
 .contact-form .submit-btn {
     background-color: white;
-    color: orangered;
+    color: orange;
     padding: 15px;
     font-size: 16px;
-    border: none;
+    font-weight: bold;
+    border: 2px solid orange;
     border-radius: 4px;
     cursor: pointer;
     align-self: center;
@@ -706,6 +750,7 @@ body {
 
 .contact-form .submit-btn:hover {
     background-color: orange;
+    color: white;
 }
 
 /* Social Media Links as Blocks */
@@ -765,12 +810,43 @@ body {
     }
 }
 
-
-/* Footer */
-.footer {
-    background-color: #1e1e1e;
+   /* Footer Styling */
+ .footer {
+    background-color: #111;  /* Dark background */
+    color: white;
     text-align: center;
-    padding: 20px;
-    color: #FFA500;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3); /* Add shadow to footer */
-}
+    padding: 20px 0;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+ }
+
+ /* Footer Text */
+ .footer p {
+    margin: 0;
+    font-weight: bold;
+ }
+
+ /* Social Icons */
+ .footer .social-icons {
+    margin-top: 10px;
+ }
+
+ .footer .social-icons a {
+    color: white; /* Ensures the icon remains white */
+    font-size: 24px; /* Default size */
+    margin: 0 12px;
+    display: inline-block;
+    text-decoration: none; /* Removes default link styles */
+    transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
+ }
+
+ /* Hover Effect */
+ .footer .social-icons a:hover {
+    transform: scale(1.3);  /* Increase icon size */
+    color: #f39c12 !important; /* Change color to orange */
+    text-shadow: 0 0 15px #f39c12, 0 0 25px #f39c12; /* Glowing orange effect */
+ }
+
+
