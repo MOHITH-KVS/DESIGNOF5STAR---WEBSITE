@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Slideshow Functionality
     const slides = document.querySelector(".slides");
     let index = 0;
@@ -33,23 +33,75 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Animate Stats Numbers (for Clients, Collaborations, Designs)
-    const statNumbers = document.querySelectorAll(".stat-number");
-    statNumbers.forEach(stat => {
-        const targetValue = parseInt(stat.getAttribute('data-target'));
-        let currentValue = 0;
+    // Function to check if an element is in the viewport
+ function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+ }
 
-        const incrementStat = () => {
-            if (currentValue < targetValue) {
-                currentValue += Math.floor(targetValue / 100);
-                stat.textContent = currentValue;
-                setTimeout(incrementStat, 30);
-            } else {
-                stat.textContent = targetValue;
-            }
-        };
-        incrementStat();
+ // Function to start stats animation when the section is visible
+ function startStatsAnimation() {
+    const statNumbers = document.querySelectorAll(".stat-number");
+
+    statNumbers.forEach(stat => {
+        if (!stat.dataset.animated && isElementInViewport(stat)) {
+            stat.dataset.animated = true; // Mark as animated to prevent repeat animation
+            const targetValue = parseInt(stat.getAttribute('data-target'));
+            let currentValue = 0;
+
+            const incrementStat = () => {
+                if (currentValue < targetValue) {
+                    currentValue += 1;
+                    stat.textContent = currentValue + "+";
+                    setTimeout(incrementStat, 100); // Animation speed
+                } else {
+                    stat.textContent = targetValue + "+";
+                }
+            };
+
+            incrementStat();
+        }
     });
+ }
+
+ // Detect when the section is in view and trigger animation
+ window.addEventListener("scroll", startStatsAnimation);
+ window.addEventListener("load", startStatsAnimation); // In case section is already visible on load
+
+ // Auto-Scrolling Logo Effect
+ const logoContainer = document.querySelector(".logo-container");
+ const logos = Array.from(logoContainer.children);
+
+ // Clone logos to create an infinite scrolling effect
+ logos.forEach((logo) => {
+    const clone = logo.cloneNode(true);
+    logoContainer.appendChild(clone);
+ });
+
+ // Function to continuously scroll logos
+ const scrollLogos = () => {
+    const firstLogo = logoContainer.firstElementChild;
+    const logoWidth = firstLogo.offsetWidth + 20; // Include margin
+
+    logoContainer.style.transition = "transform 2s linear";
+    logoContainer.style.transform = `translateX(-${logoWidth}px)`;
+
+    setTimeout(() => {
+        logoContainer.appendChild(firstLogo);
+        logoContainer.style.transition = "none";
+        logoContainer.style.transform = "translateX(0)";
+        setTimeout(scrollLogos, 100); // Loop the animation
+    }, 2000); // Time should match transition duration
+ };
+
+ scrollLogos();
+
+
 
     // Testimonial Scrolling
     const testimonialContainer = document.querySelector(".testimonial-container");
