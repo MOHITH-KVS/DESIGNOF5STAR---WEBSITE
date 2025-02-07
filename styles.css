@@ -688,6 +688,7 @@ body {
     text-align: center;
 }
 
+
 /* Flexbox Layout */
 .contact-content {
     display: flex;
@@ -848,5 +849,75 @@ body {
     color: #f39c12 !important; /* Change color to orange */
     text-shadow: 0 0 15px #f39c12, 0 0 25px #f39c12; /* Glowing orange effect */
  }
+
+ .highlight {
+    animation: highlightEffect 1.5s ease-in-out;
+}
+
+@keyframes highlightEffect {
+    0% { background-color: orangered; }  /* Yellow flash */
+    50% { background-color: transparent; }
+    100% { background-color: orangered; }
+}
+
+/* Modal Background */
+.success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Success Modal Content (Specific) */
+.success-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Heading */
+.success-modal-content h2 {
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+/* Modal Text */
+.success-modal-content p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Close Button */
+.close-btn {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: #e65c00;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 
 
