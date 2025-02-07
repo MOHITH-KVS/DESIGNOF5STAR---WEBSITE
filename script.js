@@ -33,75 +33,69 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Function to check if an element is in the viewport
- function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
- }
+    // Stats Animation on Scroll
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
 
- // Function to start stats animation when the section is visible
- function startStatsAnimation() {
-    const statNumbers = document.querySelectorAll(".stat-number");
+    function startStatsAnimation() {
+        const statNumbers = document.querySelectorAll(".stat-number");
 
-    statNumbers.forEach(stat => {
-        if (!stat.dataset.animated && isElementInViewport(stat)) {
-            stat.dataset.animated = true; // Mark as animated to prevent repeat animation
-            const targetValue = parseInt(stat.getAttribute('data-target'));
-            let currentValue = 0;
+        statNumbers.forEach(stat => {
+            if (!stat.dataset.animated && isElementInViewport(stat)) {
+                stat.dataset.animated = true;
+                const targetValue = parseInt(stat.getAttribute('data-target'));
+                let currentValue = 0;
 
-            const incrementStat = () => {
-                if (currentValue < targetValue) {
-                    currentValue += 1;
-                    stat.textContent = currentValue + "+";
-                    setTimeout(incrementStat, 100); // Animation speed
-                } else {
-                    stat.textContent = targetValue + "+";
-                }
-            };
+                const incrementStat = () => {
+                    if (currentValue < targetValue) {
+                        currentValue += 1;
+                        stat.textContent = currentValue + "+";
+                        setTimeout(incrementStat, 100);
+                    } else {
+                        stat.textContent = targetValue + "+";
+                    }
+                };
 
-            incrementStat();
-        }
+                incrementStat();
+            }
+        });
+    }
+
+    window.addEventListener("scroll", startStatsAnimation);
+    window.addEventListener("load", startStatsAnimation);
+
+    // Auto-Scrolling Logo Effect
+    const logoContainer = document.querySelector(".logo-container");
+    const logos = Array.from(logoContainer.children);
+
+    logos.forEach((logo) => {
+        const clone = logo.cloneNode(true);
+        logoContainer.appendChild(clone);
     });
- }
 
- // Detect when the section is in view and trigger animation
- window.addEventListener("scroll", startStatsAnimation);
- window.addEventListener("load", startStatsAnimation); // In case section is already visible on load
+    function scrollLogos() {
+        const firstLogo = logoContainer.firstElementChild;
+        const logoWidth = firstLogo.offsetWidth + 20;
 
- // Auto-Scrolling Logo Effect
- const logoContainer = document.querySelector(".logo-container");
- const logos = Array.from(logoContainer.children);
+        logoContainer.style.transition = "transform 2s linear";
+        logoContainer.style.transform = `translateX(-${logoWidth}px)`;
 
- // Clone logos to create an infinite scrolling effect
- logos.forEach((logo) => {
-    const clone = logo.cloneNode(true);
-    logoContainer.appendChild(clone);
- });
+        setTimeout(() => {
+            logoContainer.appendChild(firstLogo);
+            logoContainer.style.transition = "none";
+            logoContainer.style.transform = "translateX(0)";
+            setTimeout(scrollLogos, 100);
+        }, 2000);
+    }
 
- // Function to continuously scroll logos
- const scrollLogos = () => {
-    const firstLogo = logoContainer.firstElementChild;
-    const logoWidth = firstLogo.offsetWidth + 20; // Include margin
-
-    logoContainer.style.transition = "transform 2s linear";
-    logoContainer.style.transform = `translateX(-${logoWidth}px)`;
-
-    setTimeout(() => {
-        logoContainer.appendChild(firstLogo);
-        logoContainer.style.transition = "none";
-        logoContainer.style.transform = "translateX(0)";
-        setTimeout(scrollLogos, 100); // Loop the animation
-    }, 2000); // Time should match transition duration
- };
-
- scrollLogos();
-
-
+    scrollLogos();
 
     // Testimonial Scrolling
     const testimonialContainer = document.querySelector(".testimonial-container");
@@ -118,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Modal Image Display with Pop-out Effect
+    // Modal Image Display
     function openModal(img) {
         const modal = document.getElementById("imageModal");
         const fullImage = document.getElementById("fullImage");
@@ -126,11 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         fullImage.src = img.src;
         modal.style.display = "flex";
-
-        // Ensure pop-out animation
         fullImage.style.animation = "fadeIn 0.3s ease-in-out forwards";
 
-        // Show contact details only on hover
         fullImage.addEventListener("mouseover", function () {
             contactMessage.style.display = "block";
         });
@@ -151,4 +142,105 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.querySelector(".close").addEventListener("click", closeModal);
+
+    // Contact Form Submission
+    const contactForm = document.querySelector(".contact-form");
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const requirements = document.getElementById("requirements").value;
+
+        // Simulate sending an email (Replace with actual backend email service)
+        const mailtoLink = `mailto:designof5star@gmail.com?subject=Design%20Request&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0ARequirements:%20${encodeURIComponent(requirements)}`;
+        window.location.href = mailtoLink;
+
+        // Display success message
+        const successMessage = document.createElement("div");
+        successMessage.classList.add("success-message");
+        successMessage.textContent = "Your requirements have been sent successfully! We will reach you within 12 hours.";
+        document.body.appendChild(successMessage);
+
+        // Style success message
+        successMessage.style.position = "fixed";
+        successMessage.style.top = "20px";
+        successMessage.style.left = "50%";
+        successMessage.style.transform = "translateX(-50%)";
+        successMessage.style.background = "#28a745";
+        successMessage.style.color = "#fff";
+        successMessage.style.padding = "10px 20px";
+        successMessage.style.borderRadius = "5px";
+        successMessage.style.boxShadow = "0 0 10px rgba(0,0,0,0.2)";
+        successMessage.style.zIndex = "1000";
+        successMessage.style.fontSize = "16px";
+
+        setTimeout(() => {
+            successMessage.style.display = "none";
+        }, 4000);
+
+        // Clear form fields
+        contactForm.reset();
+    });
+
+    // Interactive Redirect to Request a Design Section
+    const contactButton = document.querySelector(".contact-btn");
+    const requestSection = document.querySelector(".contact-form-container");
+    const modal = document.getElementById("imageModal");
+
+    contactButton.addEventListener("click", function () {
+        document.querySelector(".contact-message").style.display = "none";
+        if (modal) modal.style.display = "none";
+
+        requestSection.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        requestSection.classList.add("highlight");
+        setTimeout(() => requestSection.classList.remove("highlight"), 1500);
+    });
+    document.getElementById("gmail-button").addEventListener("click", function () {
+        let name = encodeURIComponent(document.getElementById("name").value.trim());
+        let email = encodeURIComponent(document.getElementById("email").value.trim());
+        let requirements = encodeURIComponent(document.getElementById("requirements").value.trim());
+    
+        if (name === "" || email === "" || requirements === "") {
+            alert("Please fill in all fields before submitting.");
+            return;
+        }
+    
+        // Opens Gmail in a new tab with pre-filled details
+        let gmailURL = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=designsof5star@gmail.com&su=Request%20for%20Design&body=Name:%20${name}%0AEmail:%20${email}%0ARequirements:%20${requirements}`;
+        
+        let newTab = window.open(gmailURL, "_blank");
+    
+        // Check when the Gmail tab is closed (user should manually close it after sending)
+        let checkTab = setInterval(function () {
+            if (newTab && newTab.closed) {
+                clearInterval(checkTab);
+                showSuccessMessage();
+            }
+        }, 1000);
+    });
+    
+    // Function to show a styled success message
+    function showSuccessMessage() {
+        let modal = document.createElement("div");
+        modal.classList.add("success-modal");
+        modal.innerHTML = `
+            <div class="success-modal-content">
+                <h2>From Designsof5star</h2>
+                <p>Your message was sent successfully! 🎉</p>
+                <p>We will contact you within 12 hours from your requested time.</p>
+                <button class="close-btn">Close</button>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+    
+        // Close modal when the button is clicked
+        document.querySelector(".close-btn").addEventListener("click", function () {
+            modal.remove();
+        });
+    }
+    
+    
 });
