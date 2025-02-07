@@ -109,15 +109,10 @@
     <div class="contact-message">
         <p>Contact us for landing pages, user interfaces, posters, social media posters, and many more</p>
         <p>For inquiries, feel free to</p>
-        <button class="contact-btn" onclick="window.location.href='mailto:designsof5star@gmail.com';">Contact Us</button>
+        <button class="contact-btn" onclick="location.href='#contact'">Contact Us</button>
+
     </div>
 </div>
-
-
-
-
-    
-
 
  <section id="clients-collaborations" class="clients-collaborations">
     <h2>Clients and Collaborations</h2>
@@ -138,9 +133,8 @@
             </div>
         </div>
     </div>
- </section>
+   </section>
 
-    
             <!-- Logos Section (Right Side) -->
             <div class="logo-container">
                 <div class="logo-box">
@@ -201,19 +195,22 @@
             <!-- Left side: Form -->
             <div class="contact-form-container">
                 <h2>Request a Design</h2>
-                <form class="contact-form">
+                <form class="contact-form" action="send_email.php" method="POST">
                     <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
                     
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     
                     <label for="requirements">Requirements of Designs</label>
-                    <textarea id="requirements" rows="4" placeholder="Describe your design requirements" required></textarea>
+                    <textarea id="requirements" name="requirements" rows="4" placeholder="Describe your design requirements" required></textarea>
                     
-                    <button type="submit" class="submit-btn">Contact-us</button>
+                    <button type="submit" class="submit-btn" id="gmail-button">Contact-now</button>
                 </form>
             </div>
+            
+            
+            
 
             <!-- Right side: Social Media Links -->
             <div class="social-links">
