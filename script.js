@@ -241,6 +241,12 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.remove();
         });
     }
+    window.addEventListener("load", function () {
+        setTimeout(() => {
+            document.getElementById("preloader").style.display = "none"; // Hide preloader
+            document.getElementById("main-content").style.display = "block"; // Show main content
+        }, 5000); // Adjust delay if needed
+    });
     
     
 });
