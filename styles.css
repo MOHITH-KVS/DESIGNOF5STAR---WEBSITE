@@ -769,10 +769,11 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative; /* Ensure proper stacking */
 }
 
 .social-links .social-link:hover {
-    transform: translateY(-10px); /* Hover effect to lift the card */
+    transform: translateY(-10px);
     background-color: orange;
 }
 
@@ -785,10 +786,14 @@ body {
     align-items: center;
     gap: 10px;
     transition: color 0.3s ease;
+    display: block; /* Make the entire block clickable */
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
 }
 
-.social-links .social-link a:hover {
-    color: white;
+.social-links .social-link:hover a {
+    color: white; /* Ensure contrast */
 }
 
 .social-links i {
@@ -798,18 +803,19 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-content {
-        flex-direction: column; /* Stack the form and social media links on mobile */
+        flex-direction: column;
         align-items: center;
     }
 
     .social-links {
-        grid-template-columns: 1fr; /* Single column layout on mobile */
+        grid-template-columns: 1fr;
     }
 
     .social-links .social-link {
         width: 100%;
     }
 }
+
 
    /* Footer Styling */
  .footer {
@@ -918,6 +924,130 @@ body {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
 }
+
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #0d0d0d; /* Dark minimal background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    animation: flickerBackground 3s infinite alternate;
+}
+
+/* Subtle flickering effect for modern UI look */
+@keyframes flickerBackground {
+    0% { background-color: #0d0d0d; }
+    50% { background-color: #1a1a1a; }
+    100% { background-color: #0d0d0d; }
+}
+
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #0d0d0d; /* Dark minimal background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    animation: flickerBackground 3s infinite alternate;
+}
+
+/* Subtle flickering effect for modern UI look */
+@keyframes flickerBackground {
+    0% { background-color: #0d0d0d; }
+    50% { background-color: #1a1a1a; }
+    100% { background-color: #0d0d0d; }
+}
+
+/* Logo Animation */
+/* Logo Styling */
+.preloader-logo {
+    width: 120px; /* Adjust size */
+    height: 120px; /* Make it a perfect circle */
+    border-radius: 50%; /* Circular shape */
+    margin-bottom: 20px;
+    margin-left: 50px;
+    box-shadow: 0px 0px 10px rgba(255, 92, 53, 0.7);
+    animation: fadeInShadow 1.5s ease-in-out infinite alternate, pulseShadow 2s infinite alternate ease-in-out;
+}
+
+/* Soft fade-in animation */
+@keyframes fadeInShadow {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Dynamic shadow animation (Breathing effect) */
+@keyframes pulseShadow {
+    0% {
+        box-shadow: 0px 0px 5px rgba(255, 92, 53, 0.4);
+    }
+    50% {
+        box-shadow: 0px 0px 20px rgba(255, 92, 53, 0.8);
+    }
+    100% {
+        box-shadow: 0px 0px 5px rgba(255, 92, 53, 0.4);
+    }
+}
+
+
+/* Zooming Text Animation */
+.flipping-cards {
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+}
+
+/* Card Animation */
+.card {
+    width: 35px;
+    height: 45px;
+    background: #ff5c35;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 4px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    animation: zoomEffect 2s infinite alternate ease-in-out;
+}
+
+/* Delayed Zoom Animations */
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+.card:nth-child(4) { animation-delay: 0.6s; }
+.card:nth-child(5) { animation-delay: 0.8s; }
+.card:nth-child(6) { animation-delay: 1s; }
+.card:nth-child(7) { animation-delay: 1.2s; }
+
+/* Zoom In/Out Animation */
+@keyframes zoomEffect {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+
+
 
 
 
