@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Designsof5star</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: #FFA500;
+            scroll-behavior: smooth;
+        }
+
+        /* Parallax Container with Animation */
+        .parallax-container {
+            position: relative;
+            height: 100vh;
+            background: url('./assests/all\ designs.png') no-repeat center center/cover;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            animation: fadeIn 2s ease-in-out;
+            transition: background-position 0.3s ease-out;
+        }
+
+        /* Fixed Header Effect */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            animation: slideUp 1s ease-out forwards 0.5s, glow 2s infinite alternate;
+        }
+
+
+        /* Animated Sections */
+        .section {
+            padding: 50px;
+            text-align: center;
+            background: linear-gradient(135deg, #1e1e1e, #282828);
+            border-radius: 10px;
+            margin: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px orange; }
+            to { text-shadow: 0 0 20px orange; }
+        }
+
+        .bold-highlight {
+          font-weight: bold;
+          color: white; /* White text */
+          text-shadow: 2px 2px 5px #FFA500, 4px 4px 10px #FF8C00; /* Orange glow */
+          background: none; /* Ensures no background effect */
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Container -->
+    <div class="parallax-container" id="parallax">
+        <div class="parallax-content">
+            <h1>Crafting Designs that Speak!</h1>
+            <p>We bring creativity to life through stunning visuals and design solutions.</p>
+        </div>
+    </div>
+
+    <!-- Sections -->
+    <section class="section"> 
+        <h2 class="bold-highlight">Who Am I</h2> 
+        <p>
+            <span class="bold-highlight">I am an AI & ML engineering student</span> with a deep passion for design and creativity.  
+            Over the years, I have worked on various design projects, blending my technical expertise with artistic  
+            skills to create stunning visuals. From UI/UX to branding, I believe that every design tells a story.  
+            <span class="bold-highlight">My goal</span> is to craft engaging, user-friendly, and visually appealing designs that leave a lasting impact.
+        </p>
+    </section>
+    
+    <section class="section"> 
+        <h2 class="bold-highlight">Our Services</h2> 
+        <p>
+            We specialize in a variety of design solutions tailored to meet your needs.  
+            <br>
+            <span class="bold-highlight">Our key services include:</span>  
+        </p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>🎨 <span class="bold-highlight">Graphic Design</span> – Logo creation, branding, posters, business cards, and more.</li>
+            <li>📱 <span class="bold-highlight">UI/UX Design</span> – Crafting intuitive and user-friendly interfaces for websites and mobile apps.</li>
+            <li>🖼️ <span class="bold-highlight">Illustration & Digital Art</span> – Custom illustrations, character designs, and concept art.</li>
+            <li>📢 <span class="bold-highlight">Marketing & Advertising Design</span> – Social media graphics, banners, promotional materials.</li>
+            <li>🌐 <span class="bold-highlight">Website & Landing Page Design</span> – Engaging and responsive layouts for a seamless experience.</li>
+        </ul>
+    </section>
+    
+    <section class="section"> 
+        <h2 class="bold-highlight">Our Mission & Vision</h2> 
+        <p>
+            <span class="bold-highlight">Mission:</span> Our mission is to create visually stunning and impactful designs that effectively communicate  
+            ideas and messages. We believe that good design is not just about aesthetics but also about functionality  
+            and user engagement.  
+        </p>
+        <p>
+            <span class="bold-highlight">Vision:</span> Our vision is to be a leading creative agency that transforms ideas into visually compelling  
+            experiences. We strive to push the boundaries of innovation, embrace new design trends, and deliver  
+            high-quality work that resonates with audiences.
+        </p>
+    </section>
+    
+    <section class="section"> 
+        <h2 class="bold-highlight">Why Choose Us?</h2> 
+        <p>
+            🚀 <span class="bold-highlight">Innovative Designs:</span> We stay ahead of design trends to create fresh and modern visuals.  
+            🎯 <span class="bold-highlight">User-Centered Approach:</span> We focus on designing with the user in mind to ensure the best experience.  
+            🔥 <span class="bold-highlight">Attention to Detail:</span> Every pixel matters! We craft designs that are clean, precise, and visually appealing.  
+            ⏳ <span class="bold-highlight">Timely Delivery:</span> We value your time and always strive to meet deadlines without compromising quality.  
+            💡 <span class="bold-highlight">Creative Problem-Solving:</span> No challenge is too big! We find creative solutions that align with your vision.  
+            🎨 <span class="bold-highlight">Custom & Unique Work:</span> Every project is unique, and we tailor our designs to match your brand identity.  
+        </p>
+    </section>
+    
+    
+
+    <script>
+        // Smooth Background Parallax Effect
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.scrollY;
+            document.getElementById("parallax").style.backgroundPosition = "center " + (scrollTop * 0.5) + "px";
+        });
+
+        // Smoothly Reveal Sections on Scroll
+        document.addEventListener("scroll", function() {
+            let elements = document.querySelectorAll(".section");
+            elements.forEach(el => {
+                let position = el.getBoundingClientRect().top;
+                let windowHeight = window.innerHeight;
+                if (position < windowHeight - 100) {
+                    el.classList.add("visible");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
