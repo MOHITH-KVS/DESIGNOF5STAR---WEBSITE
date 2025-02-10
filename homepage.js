@@ -245,8 +245,30 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             document.getElementById("preloader").style.display = "none"; // Hide preloader
             document.getElementById("main-content").style.display = "block"; // Show main content
-        }, 5000); // Adjust delay if needed
+        }, 4000); // Adjust delay if needed
     });
+
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+    
+            // Check if the link is an internal section (starting with #)
+            if (targetId.startsWith("#")) {
+                e.preventDefault();
+                const targetElement = document.getElementById(targetId.substring(1));
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 50, // Adjust for header height
+                        behavior: 'smooth'
+                    });
+                }
+            } else {
+                // Allow normal redirection for external pages
+                window.location.href = targetId;
+            }
+        });
+    });
+    
     
     
 });
