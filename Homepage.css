@@ -69,6 +69,22 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(255, 165, 0, 0.6); /* Shadow effect on hover */
 }
+/* Contact Button Styling */
+.nav-links a:last-child {
+    background: linear-gradient(45deg, #ff7e00, #ffcc00);
+    color: #222;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px 20px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.6);
+}
+
+.nav-links a:last-child:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 140, 0, 0.8);
+}
+
 
 /* Introduction Section Styling */
 .intro {
@@ -1044,6 +1060,7 @@ body {
     0% { opacity: 0.3; transform: scale(0.9); }
     100% { opacity: 1; transform: scale(1); }
 }
+
 
 
 
