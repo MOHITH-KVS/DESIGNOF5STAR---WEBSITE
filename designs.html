@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designs - DesignsOf5Star</title>
+    <link rel="stylesheet" href="designs.css">
+    <script defer src="designs.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>DesignsOf5Star</h1>
+    </header>
+
+    <!-- Category Buttons -->
+    <div class="categories">
+        <div class="category-container">
+            <button data-category="all" class="category-btn active">All</button>
+            <button data-category="social" class="category-btn">Social Media Posters</button>
+            <button data-category="branding" class="category-btn">Branding Posters</button>
+            <button data-category="website" class="category-btn">Website UI</button>
+            <button data-category="app" class="category-btn">App UI</button>
+            <button data-category="video" class="category-btn">Video Posters</button>
+            <button data-category="services" class="category-btn">Services Posters</button>
+            <button data-category="promotion" class="category-btn">Promotion Posters</button>
+            <button data-category="fest" class="category-btn">Fest Posters</button>
+            <button data-category="visiting" class="category-btn">Visiting Cards</button>
+            <button data-category="landing" class="category-btn">Landing Pages</button>
+        </div>
+    </div>
+
+    <!-- Design Gallery -->
+    <div id="designGallery"></div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <button id="closeModal" class="close-btn" aria-label="Close Modal">&times;</button>
+            <div class="modal-left">
+                <img id="modalImage" src="" alt="Full Design" loading="lazy">
+                <span class="watermark">Designsof5star</span>
+            </div>
+            <div class="modal-right">
+                <h2 id="designTitle"></h2>
+                <p id="designDescription"></p>
+                <p id="designerDetails"></p>
+                <button class="buy-btn">Buy Now</button>
+                <button class="contact-btn">Contact Us</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 DesignsOf5Star | All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
