@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Designs of 5Star</title>
+    <link rel="stylesheet" href="help.css">
+    <header class="navbar">
+        <div class="logo">
+            <img src="./assests/MY LOGO.jpg" alt="5Star Logo">
+            <span class="logo-text">
+                <span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span>
+                <span>o</span><span>f</span>
+                <span>5</span><span>S</span><span>t</span><span>a</span><span>r</span>
+            </span>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="homepage.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="services.html" target="_blank">Services</a>
+            <a href="#designs">Designs</a>
+            <a href="resources.html">Resources</a>
+            <a href="help.html">Help</a>
+            <a href="homepage.html#contact">Contact us</a>
+        </nav>
+    </header>
+</head>
+<body>
+    <div class="container">
+        <h1>Help & Support</h1>
+        <p>Find answers to common questions about Designs of 5Star.</p>
+        
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="question">What is Designs of 5Star? <span class="icon">▼</span></div>
+                <div class="answer">Designs of 5Star is a UI/UX design studio specializing in creative web, app, and branding solutions.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">How can I contact you? <span class="icon">▼</span></div>
+                <div class="answer">You can reach us via email at support@designsof5star.com or through our contact page.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">What services do you offer? <span class="icon">▼</span></div>
+                <div class="answer">We provide UI/UX design, website & app design, branding, and graphic design services.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">How much do you charge for a project? <span class="icon">▼</span></div>
+                <div class="answer">Pricing depends on the project scope. Contact us for a customized quote.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Do you offer refunds? <span class="icon">▼</span></div>
+                <div class="answer">Once work has begun, we do not offer refunds, but we ensure quality results with multiple revisions.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">How many revisions do you offer? <span class="icon">▼</span></div>
+                <div class="answer">We offer up to [X] revisions per project to ensure complete satisfaction.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">How long does a project take? <span class="icon">▼</span></div>
+                <div class="answer">Timelines vary based on the project complexity. A standard website UI takes around [X] weeks.</div>
+            </div>
+        </div>
+        
+        <div class="contact">
+            <h2>Need More Help?</h2>
+            <p>If you have any other questions, feel free to contact us.</p>
+            <a href="homepage.html#contact">Contact Support</a>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+                const answer = item.querySelector('.answer');
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
