@@ -295,7 +295,7 @@ body {
 
 /* Design Gallery - Grid Layout */
 .design-gallery {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Automatically fills with boxes */
     gap: 25px;
     justify-items: center; /* Ensures each box is centered in its grid cell */
