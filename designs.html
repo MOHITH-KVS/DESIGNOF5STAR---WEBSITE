@@ -8,7 +8,6 @@
     <script defer src="designs.js"></script>
 </head>
 <body>
-
     <!-- Header -->
     <header>
         <h1>DesignsOf5Star</h1>
@@ -39,15 +38,18 @@
         <div class="modal-content">
             <button id="closeModal" class="close-btn" aria-label="Close Modal">&times;</button>
             <div class="modal-left">
-                <img id="modalImage" src="" alt="Full Design" loading="lazy">
-                <span class="watermark">Designsof5star</span>
-            </div>
-            <div class="modal-right">
                 <h2 id="designTitle"></h2>
                 <p id="designDescription"></p>
                 <p id="designerDetails"></p>
-                <button class="buy-btn">Buy Now</button>
-                <button class="contact-btn">Contact Us</button>
+                <a id="designLink" href="#" target="_blank" class="design-link">View Full Design</a>
+                <div class="modal-buttons">
+                    <button class="buy-btn">Buy Now</button>
+                    <button class="contact-btn">Contact Us</button>
+                </div>
+            </div>
+            <div class="modal-right">
+                <img id="modalImage" src="" alt="Full Design" loading="lazy">
+                <span class="watermark">Designsof5star</span>
             </div>
         </div>
     </div>
@@ -56,6 +58,5 @@
     <footer>
         <p>© 2025 DesignsOf5Star | All rights reserved.</p>
     </footer>
-
 </body>
 </html>

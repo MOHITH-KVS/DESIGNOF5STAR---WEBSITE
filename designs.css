@@ -8,79 +8,72 @@ body {
     text-align: center;
 }
 
+/* Header */
+header {
+    padding: 20px;
+    font-size: 28px;
+    background: #222;
+    border-bottom: 3px solid orange;
+}
+
 /* Category buttons */
-#categoryButtons {
+.categories {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    row-gap: 20px; /* Adjusted for more spacing */
-    column-gap: 15px; /* Added horizontal spacing */
-    margin: 30px 20px;
+    gap: 15px;
+    margin: 30px auto;
+    max-width: 90%;
 }
 
-/* Individual category button */
 .category-btn {
     background: #222;
     color: white;
     border: 2px solid orange;
-    padding: 12px 20px; /* Increased padding */
+    padding: 14px 22px;
     cursor: pointer;
-    font-size: 16px; /* Slightly larger text */
-    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    transition: all 0.3s ease;
     border-radius: 5px;
-    margin: 5px 10px; /* Added margin for spacing */
 }
-
 
 .category-btn:hover, .category-btn.active {
     background: orange;
     color: #121212;
-    font-weight: bold;
-    transform: scale(1.05);
-}
-
-/* Category heading */
-.category-heading {
-    text-align: left;
-    margin: 60px 10% 30px; /* Added bottom margin for more space between sections */
-    font-size: 24px; /* Slightly larger font size */
-    border-bottom: 2px solid orange;
-    display: inline-block;
+    transform: scale(1.07);
 }
 
 /* Design gallery */
-.design-container {
+#designGallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px; /* Increased gap for more spacing */
+    gap: 30px;
     padding: 20px;
-    margin-bottom: 60px;
 }
 
 /* Individual design item */
 .design-item {
     position: relative;
-    width: 240px;
-    height: 240px;
+    width: 260px;
+    height: 260px;
     overflow: hidden;
     cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 20px; /* Adds more spacing between items */
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin: 15px;
 }
-
 
 .design-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .design-item:hover {
     transform: scale(1.05);
-    box-shadow: 0px 0px 15px orange;
+    box-shadow: 0px 0px 18px orange;
 }
 
 /* No designs available message */
@@ -93,7 +86,7 @@ body {
 .view-more {
     display: block;
     text-align: center;
-    margin: 30px auto; /* Added more space below the gallery */
+    margin: 40px auto;
     color: orange;
     cursor: pointer;
     font-size: 18px;
@@ -104,40 +97,44 @@ body {
 }
 
 /* Modal styles */
-#modal {
-    display: none;
+.modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8); /* Adjust opacity to reduce darkness */
+    display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeIn 0.5s;
-    z-index: 1000;
+    z-index: 9999; /* Ensure it's above other elements */
 }
 
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    background: #222;
+    position: relative;
+    background: #121212; /* Or a color that fits your design */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 20px orange;
-    width: 80%;
-    max-width: 600px;
-    gap: 15px;
-    position: relative;
-    text-align: center;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
 }
 
-.modal-image {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
+.modal-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-left img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
     border-radius: 10px;
 }
+
+
 
 .watermark {
     position: absolute;
@@ -147,36 +144,42 @@ body {
     font-size: 14px;
 }
 
-/* Modal details */
-.modal-details h2 {
+.modal-right {
+    flex: 1;
+    text-align: left;
+}
+
+.modal-right h2 {
     color: orange;
     font-size: 22px;
 }
 
-.modal-details p {
-    font-size: 14px;
+.modal-right p {
+    font-size: 15px;
     line-height: 1.5;
 }
 
-/* Buttons inside modal */
+/* Modal buttons */
 .modal-buttons {
     display: flex;
     gap: 10px;
-    justify-content: center;
+    justify-content: left;
 }
 
-.btn {
+.buy-btn, .contact-btn {
     display: inline-block;
-    padding: 12px 18px; /* Slightly bigger padding */
+    padding: 12px 18px;
     background: orange;
     color: black;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     transition: background 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
-.btn:hover {
+.buy-btn:hover, .contact-btn:hover {
     background: #ff9100;
 }
 
@@ -198,11 +201,13 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        width: 90%;
+    }
+
     .design-item {
         width: 180px;
         height: 180px;
-    }
-    .modal-content {
-        width: 90%;
     }
 }

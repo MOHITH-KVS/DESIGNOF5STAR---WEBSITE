@@ -1,23 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
     const designs = [
-        { name: "VIRTUAL REALITY LANDIG PAGE INSPIRATION", category: "landing", img: "assests/figma trail 11 (1).png", desc: "Modern UI landing page", designer: "5Star Designs" },
-        { name: "Social Media Poster 1", category: "social", img: "social1.jpg", desc: "Engaging social media post", designer: "5Star Designs" },
-        { name: "Branding Poster 1", category: "branding", img: "branding1.jpg", desc: "Creative branding poster", designer: "5Star Designs" },
-        { name: "Website UI 1", category: "website", img: "website1.jpg", desc: "User-friendly website UI", designer: "5Star Designs" },
-        { name: "App UI 1", category: "app", img: "app1.jpg", desc: "Smooth app UI design", designer: "5Star Designs" }
+        { name: "VIRTUAL REALITY LANDING PAGE INSPIRATION", category: "landing", img: "assests/figma trail 11 (1).png", desc: "Modern UI landing page", designer: "5Star Designs", link: "#" },
+        { name: "Social Media Poster 1", category: "social", img: "social1.jpg", desc: "Engaging social media post", designer: "5Star Designs", link: "#" },
+        { name: "Branding Poster 1", category: "branding", img: "branding1.jpg", desc: "Creative branding poster", designer: "5Star Designs", link: "#" },
+        { name: "Website UI 1", category: "website", img: "website1.jpg", desc: "User-friendly website UI", designer: "5Star Designs", link: "#" },
+        { name: "App UI 1", category: "app", img: "app1.jpg", desc: "Smooth app UI design", designer: "5Star Designs", link: "#" }
     ];
 
     const gallery = document.getElementById("designGallery");
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modalImage");
-    const modalText = document.getElementById("modalText");
+    const modalTitle = document.getElementById("designTitle");
+    const modalDesc = document.getElementById("designDescription");
+    const modalDesigner = document.getElementById("designerDetails");
+    const modalLink = document.getElementById("designLink");
     const closeModal = document.getElementById("closeModal");
     const categoryButtons = document.querySelectorAll(".category-btn");
 
     function displayDesigns(category = "all") {
         gallery.innerHTML = "";
         const filteredDesigns = designs.filter(d => category === "all" || d.category === category);
-        
+
         if (filteredDesigns.length === 0) {
             gallery.innerHTML = "<p class='no-designs'>No designs available.</p>";
             return;
@@ -37,21 +40,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function openModal(design) {
         modal.style.display = "flex";
-        modalImg.src = design.img;
+        modalImg.src = design.img; 
         modalImg.alt = design.name;
-        modalText.innerHTML = `
-            <h2>${design.name}</h2>
-            <p>${design.desc}</p>
-            <p><strong>Designer:</strong> ${design.designer}</p>
-            <div class="modal-buttons">
-                <a href="#" class="btn">Buy Now</a>
-                <a href="#" class="btn">Contact Us</a>
-            </div>
-            <span class="watermark">Designsof5star</span>
-        `;
+        modalTitle.textContent = design.name;
+        modalDesc.textContent = design.desc;
+        modalDesigner.textContent = `Designed by: ${design.designer}`;
+        modalLink.innerHTML = `<a href="${design.link}" target="_blank">View Full Design</a>`;
     }
 
-    closeModal.addEventListener("click", () => modal.style.display = "none");
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
 
     window.addEventListener("click", (e) => {
         if (e.target === modal) {
@@ -60,10 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     categoryButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            document.querySelector(".active")?.classList.remove("active");
-            btn.classList.add("active");
-            displayDesigns(btn.dataset.category);
+        btn.addEventListener("click", function () {
+            categoryButtons.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            displayDesigns(this.getAttribute("data-category"));
         });
     });
 
