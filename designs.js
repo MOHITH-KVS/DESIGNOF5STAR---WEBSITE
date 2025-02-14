@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const designs = [
-        { name: "Landing Page 1", category: "landing", img: "landing1.jpg", desc: "Modern UI landing page", designer: "5Star Designs" },
+        { name: "VIRTUAL REALITY LANDIG PAGE INSPIRATION", category: "landing", img: "assests/figma trail 11 (1).png", desc: "Modern UI landing page", designer: "5Star Designs" },
         { name: "Social Media Poster 1", category: "social", img: "social1.jpg", desc: "Engaging social media post", designer: "5Star Designs" },
         { name: "Branding Poster 1", category: "branding", img: "branding1.jpg", desc: "Creative branding poster", designer: "5Star Designs" },
         { name: "Website UI 1", category: "website", img: "website1.jpg", desc: "User-friendly website UI", designer: "5Star Designs" },
