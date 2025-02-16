@@ -1,82 +1,88 @@
-/* Global styles */
+/* Global Styles */
 body {
-    background-color: #121212;
-    color: #ffffff;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #121212;
+    color: #fff;
     overflow-x: hidden;
-    text-align: center;
-    overflow-y: auto; /* Ensure scrolling works */
 }
 
 /* Navbar */
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 15px 40px;
-    background-color: #1a1a1a;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #222;
 }
-
-/* Logo */
 .logo {
     display: flex;
     align-items: center;
 }
-
 .logo img {
-    height: 60px;
-    border-radius: 50%;
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50px;
+    margin-left: 20px;
 }
-
 .logo-text {
-    font-size: 26px;
-    font-weight: 600;
+    font-size: 25px;
+    font-weight: bold;
+    display: inline-block;
     color: white;
-    margin-left: 15px;
-    transition: color 0.3s;
+    margin-left: 10px;
 }
 
-.logo-text:hover {
-    color: #ffcc00;
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
+.logo-text span {
+    display: inline-block;
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* Navigation */
+.logo-text span:hover {
+    color: #ffcc00; /* Glowing color */
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900, 0 0 30px #ff6600;
+    transform: scale(0.7); /* Zoom-out effect */
+}
+
+/* Adjust the nav-links to move left */
 .nav-links {
     display: flex;
-    justify-content: center;
     gap: 20px;
-    width: 100%;
+    margin-left: 0;
+    margin-right: 100px;
 }
 
+/* Navigation links */
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 18px;
-    padding: 10px 18px;
+    font-size: 16px;
+    padding: 8px 15px;
     transition: 0.3s;
-    border-radius: 8px;
+    position: relative;
 }
 
 .nav-links a:hover {
-    background-color: #ff9100;
+    background-color: #FFA500;
     color: #000;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(255, 165, 0, 0.6); /* Shadow effect on hover */
 }
 
+/* Contact Button Styling */
 .nav-links a:last-child {
     background: linear-gradient(45deg, #ff7e00, #ffcc00);
     color: #222;
     font-weight: bold;
-    padding: 12px 22px;
-    box-shadow: 0 5px 12px rgba(255, 165, 0, 0.7);
+    border-radius: 15px;
+    padding: 10px 20px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.6);
 }
 
 .nav-links a:last-child:hover {
     transform: scale(1.1);
-    box-shadow: 0 7px 15px rgba(255, 140, 0, 0.9);
+    box-shadow: 0 6px 15px rgba(255, 140, 0, 0.8);
 }
 
 /* Category buttons */
@@ -117,26 +123,44 @@ body {
     justify-content: center;
 }
 
+/* Design Box */
 .design-item {
     position: relative;
-    width: 100%;
-    max-width: 320px;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Align the image at the bottom */
+    background: #1a1a1a;
+    border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
-    border-radius: 15px;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid orange; /* Added border */
 }
 
 .design-item img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 15px;
+    height: 85%;
+    object-fit: contain; /* Ensures image fits within the box without distortion */
+    border-radius: 15px 15px 0 0;
 }
 
+/* Design Name */
+.design-name {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 0 0 15px 15px;
+}
+
+/* Hover effect for design items */
 .design-item:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
     box-shadow: 0px 0px 15px orange;
 }
 
@@ -153,58 +177,72 @@ body {
     justify-content: center;
     z-index: 9999;
     padding: 20px;
+    overflow: auto; /* Allow scrolling if content exceeds viewport */
 }
 
 /* Modal Content */
 .modal-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background: #1a1a1a;
     padding: 30px;
     border-radius: 15px;
-    width: 90%;
+    width: auto;
     max-height: 90vh;
     gap: 25px;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow-y: auto;
-    border: 2px solid orange; /* Added border */
-    transition: transform 0.3s ease-in-out;
-}
-
-.modal-content:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 0px 15px orange;
+    border: 3px solid orange;
 }
 
 /* Modal Image */
+.modal-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    overflow: visible;
+    max-width: 100%;
+}
+
 .modal-left img {
-    width: 100%;
+    width: auto;
     height: auto;
-    max-height: 80vh;
     object-fit: contain;
+    max-width: 90vw;
+    max-height: 90vh;
     border-radius: 12px;
 }
 
 /* Modal Details */
 .modal-right {
-    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     color: white;
     max-width: 450px;
     text-align: center;
     align-items: center;
+    border: 2px solid orange;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #121212;
+    margin-top: 15px;
+    max-height: 90vh;
 }
 
+/* Modal Title */
 .modal-right h2 {
     color: orange;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
+/* Modal Description */
 .modal-right p {
     font-size: 18px;
     line-height: 1.5;
@@ -223,6 +261,7 @@ body {
     transition: background 0.3s, transform 0.2s;
     width: 100%;
     text-align: center;
+    margin-top: 20px;
 }
 
 .buy-btn:hover, .contact-btn:hover {
