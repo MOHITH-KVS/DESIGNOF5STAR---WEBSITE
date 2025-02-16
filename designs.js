@@ -1,21 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
     const designs = [
-        { name: "VIRTUAL REALITY LANDING PAGE INSPIRATION", category: "landing", img: "assests/figma trail 11 (1).png", desc: "Modern UI landing page", designer: "5Star Designs", link: "#" },
-        { name: "Social Media Poster 1", category: "social", img: "social1.jpg", desc: "Engaging social media post", designer: "5Star Designs", link: "#" },
-        { name: "Branding Poster 1", category: "branding", img: "branding1.jpg", desc: "Creative branding poster", designer: "5Star Designs", link: "#" },
-        { name: "Website UI 1", category: "website", img: "website1.jpg", desc: "User-friendly website UI", designer: "5Star Designs", link: "#" },
-        { name: "App UI 1", category: "app", img: "app1.jpg", desc: "Smooth app UI design", designer: "5Star Designs", link: "#" }
+        { name: "VIRTUAL REALITY LANDING PAGE INSPIRATION", category: "landing", img: "assests/figma trail 11 (1).png", desc: "Modern UI landing page", designer: "5Star Designs", link: "#", social: "#" },
+        { name: "Social Media Poster 1", category: "social", img: "assets/YASH-INTERIORS-WHITE-FINAL.png", desc: "Engaging social media post", designer: "5Star Designs", link: "#", social: "https://instagram.com/5StarDesigns" },
+        { name: "Branding Poster 1", category: "branding", img: "assets/branding1.jpg", desc: "Creative branding poster", designer: "5Star Designs", link: "#", social: "#" },
+        { name: "Website UI 1", category: "website", img: "assets/website1.jpg", desc: "User-friendly website UI", designer: "5Star Designs", link: "https://dribbble.com/design1", social: "#" },
+        { name: "App UI 1", category: "app", img: "assets/app1.jpg", desc: "Smooth app UI design", designer: "5Star Designs", link: "#", social: "https://twitter.com/5StarDesigns" }
     ];
-
+    
+    console.log("Designs loaded:", designs);
+    
     const gallery = document.getElementById("designGallery");
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modalImage");
     const modalTitle = document.getElementById("designTitle");
     const modalDesc = document.getElementById("designDescription");
     const modalDesigner = document.getElementById("designerDetails");
-    const modalLink = document.getElementById("designLink");
+    const modalCategory = document.getElementById("designCategory");
+    const modalDesignLink = document.getElementById("designLinks");
+    const modalSocialLink = document.getElementById("socialLinks");
     const closeModal = document.getElementById("closeModal");
     const categoryButtons = document.querySelectorAll(".category-btn");
+    const modalOverlay = document.getElementById("modalOverlay");
 
     function displayDesigns(category = "all") {
         gallery.innerHTML = "";
@@ -40,22 +45,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function openModal(design) {
         modal.style.display = "flex";
-        modalImg.src = design.img; 
-        modalImg.alt = design.name;
-        modalTitle.textContent = design.name;
-        modalDesc.textContent = design.desc;
-        modalDesigner.textContent = `Designed by: ${design.designer}`;
-        modalLink.innerHTML = `<a href="${design.link}" target="_blank">View Full Design</a>`;
+        modalImg.src = design.img || "default.jpg"; 
+        modalImg.alt = design.name || "No Image";
+        modalTitle.textContent = design.name || "No Title";
+        modalDesc.textContent = design.desc || "No Description";
+        modalDesigner.textContent = `Designer: ${design.designer || "Unknown"}`;
+        modalCategory.textContent = `Category: ${design.category || "N/A"}`;
+
+        modalImg.style.float = "left";
+        modalTitle.style.textAlign = "right";
+        modalDesc.style.textAlign = "left";
+        modalDesigner.style.textAlign = "right";
+        modalCategory.style.textAlign = "left";
+        modalDesignLink.style.textAlign = "right";
+        modalSocialLink.style.textAlign = "left";
+
+        // Handle Design Links
+        if (design.link && design.link !== "#") {
+            modalDesignLink.href = design.link;
+            modalDesignLink.textContent = "View Full Design";
+            modalDesignLink.style.display = "inline";
+        } else {
+            modalDesignLink.style.display = "none";
+        }
+
+        // Handle Social Links
+        if (design.social && design.social !== "#") {
+            modalSocialLink.href = design.social;
+            modalSocialLink.textContent = "View Social Media";
+            modalSocialLink.style.display = "inline";
+        } else {
+            modalSocialLink.style.display = "none";
+        }
+
+        document.body.style.overflow = "hidden"; // Prevent background scroll
+    }
+    
+    function closeModalHandler() {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // Restore scroll
     }
 
-    closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.style.display = "none";
-        }
+    closeModal.addEventListener("click", closeModalHandler);
+    modalOverlay.addEventListener("click", closeModalHandler);
+    
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModalHandler();
     });
 
     categoryButtons.forEach(btn => {

@@ -9,12 +9,24 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <h1>DesignsOf5Star</h1>
+    <header class="navbar">
+        <div class="logo">
+            <img src="./assets/MY_LOGO.jpg" alt="5Star Logo">
+            <span class="logo-text">DesignsOf5Star</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="designs.html" class="active">Designs</a>
+            <a href="resources.html">Resources</a>
+            <a href="help.html">Help</a>
+            <a href="index.html#contact">Contact Us</a>
+        </nav>
     </header>
 
     <!-- Category Buttons -->
-    <div class="categories">
+    <section class="categories">
         <div class="category-container">
             <button data-category="all" class="category-btn active">All</button>
             <button data-category="social" class="category-btn">Social Media Posters</button>
@@ -28,35 +40,44 @@
             <button data-category="visiting" class="category-btn">Visiting Cards</button>
             <button data-category="landing" class="category-btn">Landing Pages</button>
         </div>
-    </div>
+    </section>
 
     <!-- Design Gallery -->
-    <div id="designGallery"></div>
+    <section id="designGallery" class="gallery">
+        <!-- Dynamic designs will be inserted here -->
+    </section>
 
-    <!-- Modal -->
+    <!-- Modal (Design Preview) -->
     <div id="modal" class="modal" role="dialog" aria-hidden="true">
-        <div class="modal-content">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content" role="document">
             <button id="closeModal" class="close-btn" aria-label="Close Modal">&times;</button>
-            <div class="modal-left">
-                <h2 id="designTitle"></h2>
-                <p id="designDescription"></p>
-                <p id="designerDetails"></p>
-                <a id="designLink" href="#" target="_blank" class="design-link">View Full Design</a>
-                <div class="modal-buttons">
-                    <button class="buy-btn">Buy Now</button>
-                    <button class="contact-btn">Contact Us</button>
+            <div class="modal-body">
+                <!-- Left Side: Image -->
+                <div class="modal-left">
+                    <img id="modalImage" src="" alt="Full Design" loading="lazy">
+                    <span class="watermark">DesignsOf5Star</span>
                 </div>
-            </div>
-            <div class="modal-right">
-                <img id="modalImage" src="" alt="Full Design" loading="lazy">
-                <span class="watermark">Designsof5star</span>
+                <!-- Right Side: Design Details -->
+                <div class="modal-right">
+                    <h2 id="designTitle" class="design-title"></h2>
+                    <p id="designDescription" class="design-description"></p>
+                    <p><strong>Category:</strong> <span id="designCategory"></span></p>
+                    <p><strong>Designer:</strong> <span id="designerDetails"></span></p>
+                    <p><strong>Design Links:</strong> <a href="#" id="designLinks" target="_blank">View</a></p>
+                    <p><strong>Social Links:</strong> <a href="#" id="socialLinks" target="_blank">View</a></p>
+                    <div class="modal-buttons">
+                        <a href="#" id="contactBtn" class="btn contact-btn">Contact Us</a>
+                        <a href="#" id="buyNowBtn" class="btn buy-btn">Buy Now</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 DesignsOf5Star | All rights reserved.</p>
+        <p>&copy; 2025 DesignsOf5Star | All rights reserved.</p>
     </footer>
 </body>
 </html>
