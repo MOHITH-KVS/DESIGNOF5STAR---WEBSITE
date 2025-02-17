@@ -141,8 +141,8 @@ body {
 
 .design-item img {
     width: 100%;
-    height: 85%;
-    object-fit: contain; /* Ensures image fits within the box without distortion */
+    height: 100%; /* Adjusted to fill the entire box */
+    object-fit: cover; /* Ensures the image covers the box */
     border-radius: 15px 15px 0 0;
 }
 
@@ -154,7 +154,6 @@ body {
     text-align: center;
     color: white;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
     border-radius: 0 0 15px 15px;
 }
 
@@ -177,7 +176,8 @@ body {
     justify-content: center;
     z-index: 9999;
     padding: 20px;
-    overflow: auto; /* Allow scrolling if content exceeds viewport */
+    overflow: auto;
+    box-sizing: border-box;
 }
 
 /* Modal Content */
@@ -190,31 +190,45 @@ body {
     width: auto;
     max-height: 90vh;
     gap: 25px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow-y: auto;
-    border: 3px solid orange;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    overflow-y: auto; /* Only allow vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrolling */
+    
 }
 
 /* Modal Image */
 .modal-left {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    flex-grow: 0;
-    overflow: visible;
-    max-width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 60%;
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    border:2px solid orange;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Hover effect */
+.modal-left:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+    border-color: #ff9800;
 }
 
 .modal-left img {
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
-    max-width: 90vw;
-    max-height: 90vh;
-    border-radius: 12px;
+    object-position: left top;
+    display: block;
+    box-sizing: border-box;
 }
 
 /* Modal Details */
@@ -223,6 +237,7 @@ body {
     flex-direction: column;
     justify-content: center;
     color: white;
+    width: 40%;
     max-width: 450px;
     text-align: center;
     align-items: center;
@@ -232,7 +247,20 @@ body {
     background-color: #121212;
     margin-top: 15px;
     max-height: 90vh;
+    position: relative;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Hover effect */
+.modal-right:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+    border-color: #ff9800;
+}
+
 
 /* Modal Title */
 .modal-right h2 {
@@ -262,12 +290,16 @@ body {
     width: 100%;
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
 }
+
 
 .buy-btn:hover, .contact-btn:hover {
     background: #ff9100;
     transform: scale(1.05);
 }
+
 
 /* Close Button */
 .close-btn {
@@ -287,3 +319,5 @@ body {
     background: orange;
     box-shadow: 0 0 10px orange;
 }
+
+
