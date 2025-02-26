@@ -269,6 +269,46 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    
+    // Function to Show/Hide Notifications
+function toggleNotifications() {
+    let notificationBox = document.getElementById("notificationContainer");
+    notificationBox.classList.toggle("show"); // Toggle class instead of direct display style
+
+    // If shown, make it visible
+    if (notificationBox.classList.contains("show")) {
+        notificationBox.style.display = "block";
+    } else {
+        notificationBox.style.display = "none";
+    }
+}
+
+// Function to Show a New Toast Notification
+function showToast(message, type = "success") {
+    const toastContainer = document.getElementById("toastContainer");
+
+    // Create toast
+    const toast = document.createElement("div");
+    toast.className = `toast ${type}`;
+    toast.innerHTML = `
+        ${message}
+        <span class="close-toast" onclick="this.parentElement.remove();">&times;</span>
+    `;
+
+    // Append toast to container
+    toastContainer.appendChild(toast);
+
+    // Remove toast after 5 seconds
+    setTimeout(() => {
+        toast.remove();
+    }, 5000);
+}
+
+function toggleNotifications() {
+    let notificationBox = document.getElementById("notificationContainer");
+    notificationBox.classList.toggle("show"); // Toggle class to show/hide notifications
+}
+
 
     
 });
