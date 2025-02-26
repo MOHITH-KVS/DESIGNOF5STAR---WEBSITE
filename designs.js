@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const designs = [
         { name: "VIRTUAL REALITY LANDING PAGE INSPIRATION", category: "landing", img: "assests/figma trail 11 (1).png", desc: "Modern UI landing page", designer: "5Star Designs", link: "#", social: "#" },
         { name: "Social Media Poster 1", category: "social", img: "assests/YASH INTERIORS WHITE FINAL.png", desc: "Engaging social media post", designer: "5Star Designs", link: "#", social: "https://instagram.com/5StarDesigns" },
-        { name: "Branding Poster 1", category: "branding", img: "assets/branding1.jpg", desc: "Creative branding poster", designer: "5Star Designs", link: "#", social: "#" },
+        { name: "Branding Poster 1", category: "branding", img: "assests/Fragrance That Defines You.png", desc: "Creative branding poster", designer: "5Star Designs", link: "#", social: "#" },
         { name: "Website UI 1", category: "website", img: "assets/website1.jpg", desc: "User-friendly website UI", designer: "5Star Designs", link: "https://dribbble.com/design1", social: "#" },
         { name: "App UI 1", category: "app", img: "assets/app1.jpg", desc: "Smooth app UI design", designer: "5Star Designs", link: "#", social: "https://twitter.com/5StarDesigns" }
     ];
