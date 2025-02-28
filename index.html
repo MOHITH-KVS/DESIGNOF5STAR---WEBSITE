@@ -45,16 +45,21 @@
  </div>
 
 
-    <!-- Notification Button -->
-    <div id="notificationButton" onclick="toggleNotifications()">
-        🔔
+        <!-- Notification Wrapper (Hidden Initially) -->
+    <div id="notificationWrapper" class="hidden">
+        <!-- Notification Button -->
+        <div id="notificationButton" onclick="toggleNotifications()">
+            🔔
+        </div>
+
+        <!-- Notification Container (Hidden Initially) -->
+        <div id="notificationContainer" class="hidden">
+            <h3>Notifications</h3>
+            <div id="toastContainer"></div>
+        </div>
     </div>
 
-    <!-- Notification Container (Hidden Initially) -->
-    <div id="notificationContainer">
-        <h3>Notifications</h3>
-        <div id="toastContainer"></div>
-    </div>
+
 
 
 

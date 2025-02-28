@@ -1063,6 +1063,14 @@ body {
 
 
 /* Notification Button */
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
 #notificationButton {
     position: fixed;
     bottom: 50px;
