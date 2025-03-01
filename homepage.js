@@ -298,7 +298,9 @@ function closeAllNotifications() {
     let notificationBox = document.getElementById("notificationContainer");
     notificationBox.classList.remove("show");
     notificationVisible = false;
+    isFirstClick = true; // Reset to show top 5 notifications on next open
 }
+
 
 // Function to Display Notifications
 function displayNotifications() {
@@ -315,18 +317,26 @@ function displayNotifications() {
         let toast = document.createElement("div");
         toast.classList.add("toast");
 
-        // Create clickable link for notification
-        let link = document.createElement("a");
-        link.href = notif.link;
-        link.textContent = notif.message;
-        link.target = "_blank"; // Open in new tab
-        link.classList.add("notification-link");
+        // Create the message container
+        let messageContainer = document.createElement("span");
+        messageContainer.textContent = notif.message + " ";
 
-        toast.appendChild(link);
+        // If the notification has a link, add a clickable "Click Here" text
+        if (notif.link) {
+            let link = document.createElement("a");
+            link.href = notif.link;
+            link.textContent = "Click Here";
+            link.target = "_blank"; // Open in new tab
+            link.classList.add("notification-link");
+
+            messageContainer.appendChild(link);
+        }
+
+        toast.appendChild(messageContainer);
         toastContainer.appendChild(toast);
     });
 
-    // Create "Close All" button (if not already present)
+    // Create "Close All" button
     let closeAllBtn = document.createElement("button");
     closeAllBtn.textContent = "Close All";
     closeAllBtn.id = "closeAllBtn";

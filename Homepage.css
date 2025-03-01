@@ -1093,12 +1093,12 @@ body {
     box-shadow: 0 0 20px rgba(255, 140, 0, 1);
 }
 
-/* Notification Container (Initially Hidden) */
+/* Notification Container (Fixed Width) */
 #notificationContainer {
     position: fixed;
     bottom: 110px;
     right: 30px;
-    width: 300px;
+    width: 350px; /* Increased to prevent overflow */
     background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -1107,39 +1107,80 @@ body {
     z-index: 9999;
 }
 
+/* Notification Title */
 #notificationContainer h3 {
     margin: 0;
     padding-bottom: 5px;
     border-bottom: 1px solid #ddd;
     font-size: 16px;
-    color: black;
+    color: orange;
 }
 
-/* Toast Styles */
+/* Toast Notifications */
 .toast {
-    background: #333;
-    color: white;
-    padding: 12px;
+    display: flex;
+    justify-content: space-between; /* Proper spacing */
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: #333;
+    width: 100%; /* Consistent width */
+    box-sizing: border-box;
 }
 
-.toast.success { background: green; }
-.toast.error { background: red; }
-.toast.info { background: blue; }
+/* Message (Fixed Width & No Expansion) */
+.notification-message {
+    flex: 1; /* Takes available space */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px; /* Space for alignment */
+}
+
+/* Link Container */
+.notification-link-container {
+    flex-shrink: 0; /* Prevents unnecessary growth */
+}
+
+/* Clickable Link */
+.notification-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 8px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.notification-link:hover {
+    background-color: #e0e0e0;
+    text-decoration: underline;
+}
 
 /* Close Button */
-.close-toast {
+.close-btn {
+    background-color: orange;
+    color: white;
+    padding: 8px;
+    border: none;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    margin-left: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
 }
+
+.close-btn:hover {
+    background-color: white;
+    color: orange;
+    border:1px solid orange;
+}
+
+
 
 
 
