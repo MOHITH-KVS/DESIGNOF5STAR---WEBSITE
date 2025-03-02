@@ -1087,11 +1087,14 @@ body {
     cursor: pointer;
     transition: 0.3s;
     z-index: 9999; /* Ensure it stays on top */
+    border: none;
+    outline: none;
 }
 
 #notificationButton:hover {
     box-shadow: 0 0 20px rgba(255, 140, 0, 1);
 }
+
 
 /* Notification Container (Fixed Width) */
 #notificationContainer {
@@ -1179,6 +1182,10 @@ body {
     color: orange;
     border:1px solid orange;
 }
+#notificationButton {
+    z-index: 10000; /* Ensure it's above everything */
+}
+
 
 
 

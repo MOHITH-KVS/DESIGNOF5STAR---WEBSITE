@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Sample Notifications Data (Now Supports Links)
 const notifications = [
-    { message: "New message from Admin", link: "https://example.com/message" },
+    { message: "New post out yash interiors", link: "https://www.instagram.com/reel/DGrx5l1oTHI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
     { message: "Your order has been shipped", link: "https://example.com/order" },
     { message: "You have a new friend request", link: "https://example.com/friends" },
     { message: "System update available", link: "https://example.com/update" },
@@ -313,6 +313,7 @@ function displayNotifications() {
     // Show top 5 on first load, then top 3 after closing
     let displayCount = isFirstClick ? 5 : 3;
 
+    // Display only the most recent (top) notifications
     notifications.slice(0, displayCount).forEach((notif) => {
         let toast = document.createElement("div");
         toast.classList.add("toast");
@@ -358,21 +359,19 @@ function displayNotifications() {
     isFirstClick = false;
 }
 
-// Ensure Notifications Appear Only After Loader Finishes
+
 window.onload = function () {
     setTimeout(() => {
         let notificationWrapper = document.getElementById("notificationWrapper");
 
-        // Show notification wrapper after homepage loads
-        notificationWrapper.classList.remove("hidden");
+        if (notificationWrapper) {
+            notificationWrapper.classList.remove("hidden"); // Make sure it becomes visible
+        }
 
-        // Display notifications initially
+        // Display notifications initially (optional)
         displayNotifications();
-    }, 5000); // Adjust this timeout to match your loader duration
+    }, 6000); // Adjust this timeout as needed
 };
-
-
-
 
     
 });
