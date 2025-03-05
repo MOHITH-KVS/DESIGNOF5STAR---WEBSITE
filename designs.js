@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "App UI 1", category: "app", img: "assests/linkedin.png", desc: "Smooth app UI design", designer: "5Star Designs", link: "#", social: "https://twitter.com/5StarDesigns" },
         { name: "PAKKA NAATU RUCHULU FOOD MENU", category: "menu-designs", img: "assests/pakka nattu ruchulu final.jpg", desc: "PROFESSIONAL CLOUD KITCHEN MENU", designer: "5Star Designs", link: "#", social: "https://twitter.com/5StarDesigns" },
         { name: "YASH INTERIORS", category: "promotion", img: "assests/YASH INTERIORS WHITE A4 FINAL.png", desc: "PROFESSIONAL BRANDING PROMOTIONAL POSTERS", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/reel/DGrx5l1oTHI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+        { name: "YASH INTERIORS", category: "social", img: "assests/YASH INTERIORS DARK FINAL.png", desc: "PROFESSIONAL BRANDING PROMOTIONAL INTERIOR DESIGN SERVICES POSTER", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DGHttYqIcYb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+        { name: "CHEF FINDER WEBSITE UI", category: "website", img: "assests/Desktop - 1 (6).png", desc: "PROFESSIONAL WEBSITE FOR CHEFS BOOKING ", designer: "5Star Designs", link: "#", social: "https://twitter.com/5StarDesigns" },
+        { name: "MEAT-SEA BY 5STAR WEBSITE UI", category: "website", img: "assests/figma trail - 14.png", desc: "PROFESSIONAL SHOPPING ECOMMERCE WEBSITE", designer: "5Star Designs", link: "#", social: "https://twitter.com/5StarDesigns" },
+        { name: "5STAR CRACKERS WEBSITE UI", category: "website", img: "assests/figma trail-16.png", desc: "PROFESSIONAL CRACKERS WEBSITE", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DGHttYqIcYb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
     ];
     
     console.log("Designs loaded:", designs);
@@ -117,4 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     displayDesigns();
+
+    
 });

@@ -119,11 +119,13 @@ body {
 /* Design Gallery */
 #designGallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 25px;
     padding: 40px;
     justify-content: center;
+    align-items: start; /* Ensures items align properly */
 }
+
 
 /* Design Box */
 .design-item {
@@ -320,3 +322,31 @@ body {
     background: orange;
     box-shadow: 0 0 10px orange;
 }
+/* Watermark for modal image */
+.watermark {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    background: rgba(0, 0, 0, 0.4); /* Dark semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    pointer-events: none; /* Ensures it doesn’t interfere with clicks */
+}
+
+/* Ensure modal-left is positioned relatively for absolute positioning of watermark */
+.modal-left {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-left img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
