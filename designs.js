@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const designs = [
-        { name: "VIRTUAL REALITY LANDING PAGE INSPIRATION", category: "landing", img: "./assests/figma trail 11 (1).png", desc: "Modern UI landing page", designer: "5Star Designs", link: "#", social: "#" },
+        { name: "VIRTUAL REALITY LANDING PAGE INSPIRATION", category: "landing", img: "assests/figma trail 11 (1).png", desc: "Modern UI landing page", designer: "5Star Designs", link: "#", social: "#" },
         { name: "BENELLI BIKE  LANDING PAGE INSPIRATION", category: "landing", img: "./assests/BENELLI ORIGINAL.png", desc: "Modern UI landing page", designer: "5Star Designs", link: "#", social: "#" },
         { name: "5STAR MOTO EV LANDING PAGE INSPIRATION", category: "landing", img: "./assests/figma trail -15.png", desc: "Modern UI landing page", designer: "5Star Designs", link: "#", social: "#" },
         { name: "5STAR CYCLES LANDING PAGE INSPIRATION", category: "landing", img: "./assests/figma trail 1.png", desc: "Modern UI landing page", designer: "5Star Designs", link: "#", social: "#" },
