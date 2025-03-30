@@ -24,6 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "CHEF FINDER WEBSITE UI", category: "website", img: "./assests/Desktop - 1 (6).png", desc: "PROFESSIONAL WEBSITE FOR CHEFS BOOKING ", designer: "5Star Designs", link: "#", social: "https://twitter.com/5StarDesigns" },
         { name: "MEAT-SEA BY 5STAR WEBSITE UI", category: "website", img: "./assests/figma trail - 14.png", desc: "PROFESSIONAL SHOPPING ECOMMERCE WEBSITE", designer: "5Star Designs", link: "#", social: "https://twitter.com/5StarDesigns" },
         { name: "5STAR CRACKERS WEBSITE UI", category: "website", img: "./assests/figma trail-16.png", desc: "PROFESSIONAL CRACKERS WEBSITE", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DGHttYqIcYb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+        { name: "AAVISHKAR SEASON-4", category: "fest", img: "assests/AAVISHKAR FINAL POSTER EDITED.png", desc: "FEST POSTER FOR THE AAVISHKAR SEASON-4", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DG8XMTSB5Cm/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+        { name: "AAVISHKAR SEASON- 4 THROWBALL POSTER", category: "fest", img: "assests/AAVISHKAR BASKET BALL POSTER.png", desc: "THROW BALL POSTER FOR THE AAVISHKAR SEASON-4", designer: "5Star Designs", link: "#", social: "#" },
+        { name: "AAVISHKAR SEASON-4 E-POSTER EVENT POSTER", category: "fest", img: "assests/AAVISHKAR 4 E-POSTER POSTER.png", desc: "AAVISHKAR SEASON-4 EPOSTER EVENT POSTER", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DHGCwIUhFF2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+        { name: "AAVISHKAR SEASON-4 TECHNICAL QUIZ EVENT POSTER", category: "fest", img: "assests/AAVISHKAR 4 TECHNICAL QUIZ POSTER.png", desc: "AAVISHKAR SEASON-4 TECHNICAL QUIZ EVENT POSTER", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DHGCd10hm8E/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+        { name: "AAVISHKAR SEASON-4 ESPORTS EVENT POSTER", category: "fest", img: "assests/AAVISHKAR 4 ESPORTS POSTER.png", desc: "AAVISHKAR SEASON-4 E-SPORTS EVENT POSTER", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DHGCwIUhFF2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
     ];
     
     console.log("Designs loaded:", designs);
