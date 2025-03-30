@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "CHEF FINDER WEBSITE UI", category: "website", img: "./assests/Desktop - 1 (6).png", desc: "PROFESSIONAL WEBSITE FOR CHEFS BOOKING ", designer: "5Star Designs", link: "#", social: "https://twitter.com/5StarDesigns" },
         { name: "MEAT-SEA BY 5STAR WEBSITE UI", category: "website", img: "./assests/figma trail - 14.png", desc: "PROFESSIONAL SHOPPING ECOMMERCE WEBSITE", designer: "5Star Designs", link: "#", social: "https://twitter.com/5StarDesigns" },
         { name: "5STAR CRACKERS WEBSITE UI", category: "website", img: "./assests/figma trail-16.png", desc: "PROFESSIONAL CRACKERS WEBSITE", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DGHttYqIcYb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-    ];
+   ];
     
     console.log("Designs loaded:", designs);
     
