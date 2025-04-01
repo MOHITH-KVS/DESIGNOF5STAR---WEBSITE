@@ -269,109 +269,82 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-// Sample Notifications Data (Now Supports Links)
+// Sample Notifications Data
 const notifications = [
-    { message: "New post out yash interiors", link: "https://www.instagram.com/reel/DGrx5l1oTHI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { message: "New post out yash interiors", link: "https://www.instagram.com/reel/DGrx5l1oTHI" },
     { message: "Your order has been shipped", link: "https://example.com/order" },
     { message: "You have a new friend request", link: "https://example.com/friends" },
     { message: "System update available", link: "https://example.com/update" },
     { message: "Reminder: Meeting at 3 PM", link: "https://example.com/meeting" }
 ];
 
-let isFirstClick = true; // Flag to track if it's the first time clicking
-let notificationVisible = false; // Track if notifications are currently shown
+let notificationVisible = false; // Track notification state
 
-// Function to Show/Hide Notifications
+// Function to Toggle Notifications
 function toggleNotifications() {
     let notificationBox = document.getElementById("notificationContainer");
 
     if (!notificationVisible) {
-        displayNotifications(); // Show notifications when clicking the button
+        displayNotifications(); // Show notifications
     } else {
-        notificationBox.classList.remove("show"); // Hide notifications if already open
+        notificationBox.style.display = "none"; // Hide notifications
         notificationVisible = false;
     }
 }
-
-// Function to Close All Notifications
-function closeAllNotifications() {
-    let notificationBox = document.getElementById("notificationContainer");
-    notificationBox.classList.remove("show");
-    notificationVisible = false;
-    isFirstClick = true; // Reset to show top 5 notifications on next open
-}
-
 
 // Function to Display Notifications
 function displayNotifications() {
     let toastContainer = document.getElementById("toastContainer");
     let notificationBox = document.getElementById("notificationContainer");
 
-    // Clear any existing notifications
+    // Clear previous notifications
     toastContainer.innerHTML = "";
 
-    // Show top 5 on first load, then top 3 after closing
-    let displayCount = isFirstClick ? 5 : 3;
-
-    // Display only the most recent (top) notifications
-    notifications.slice(0, displayCount).forEach((notif) => {
+    notifications.forEach((notif, index) => {
         let toast = document.createElement("div");
         toast.classList.add("toast");
 
-        // Create the message container
         let messageContainer = document.createElement("span");
         messageContainer.textContent = notif.message + " ";
 
-        // If the notification has a link, add a clickable "Click Here" text
+        // Add link if available
         if (notif.link) {
             let link = document.createElement("a");
             link.href = notif.link;
             link.textContent = "Click Here";
             link.target = "_blank"; // Open in new tab
-            link.classList.add("notification-link");
-
+            link.style.color = "#007bff";
+            link.style.textDecoration = "none";
+            link.style.fontWeight = "bold";
             messageContainer.appendChild(link);
         }
 
+        // Close Button for Each Notification
+        let closeButton = document.createElement("button");
+        closeButton.textContent = "✖";
+        closeButton.onclick = function () {
+            toast.remove(); // Remove only this notification
+        };
+
         toast.appendChild(messageContainer);
+        toast.appendChild(closeButton);
         toastContainer.appendChild(toast);
     });
 
-    // Create "Close All" button
-    let closeAllBtn = document.createElement("button");
-    closeAllBtn.textContent = "Close All";
-    closeAllBtn.id = "closeAllBtn";
-    closeAllBtn.classList.add("close-btn");
-    closeAllBtn.onclick = closeAllNotifications;
-    toastContainer.appendChild(closeAllBtn);
-
     // Show the notification container
-    notificationBox.classList.add("show");
-    notificationVisible = true; // Mark notifications as visible
-
-    // Hide notifications after 10 seconds
-    setTimeout(() => {
-        notificationBox.classList.remove("show");
-        notificationVisible = false;
-    }, 10000);
-
-    // Update the flag so next time it shows top 3
-    isFirstClick = false;
+    notificationBox.style.display = "block";
+    notificationVisible = true;
 }
 
-
+// Auto-show Notifications after Page Load
 window.onload = function () {
     setTimeout(() => {
-        let notificationWrapper = document.getElementById("notificationWrapper");
-
-        if (notificationWrapper) {
-            notificationWrapper.classList.remove("hidden"); // Make sure it becomes visible
-        }
-
-        // Display notifications initially (optional)
         displayNotifications();
-    }, 6000); // Adjust this timeout as needed
+    }, 6000); // Show after 5 seconds
 };
+
+// Attach Event Listener to Notification Button
+document.getElementById("notificationButton").addEventListener("click", toggleNotifications);
 
     
     
