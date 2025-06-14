@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "AAVISHKAR SEASON-4 E-POSTER EVENT POSTER", category: "fest", img: "assests/AAVISHKAR 4 E-POSTER POSTER.png", desc: "AAVISHKAR SEASON-4 EPOSTER EVENT POSTER", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DHGCwIUhFF2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
         { name: "AAVISHKAR SEASON-4 TECHNICAL QUIZ EVENT POSTER", category: "fest", img: "assests/AAVISHKAR 4 TECHNICAL QUIZ POSTER.png", desc: "AAVISHKAR SEASON-4 TECHNICAL QUIZ EVENT POSTER", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DHGCd10hm8E/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
         { name: "AAVISHKAR SEASON-4 ESPORTS EVENT POSTER", category: "fest", img: "assests/AAVISHKAR 4 ESPORTS POSTER.png", desc: "AAVISHKAR SEASON-4 E-SPORTS EVENT POSTER", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DHGCwIUhFF2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-        { name: "AAVISHKAR SEASON-4 ESPORTS EVENT POSTER", category: "fest", img: "assests/AAVISHKAR 4 ESPORTS POSTER.png", desc: "AAVISHKAR SEASON-4 E-SPORTS EVENT POSTER", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DHGCwIUhFF2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+        
    ];
     
     console.log("Designs loaded:", designs);
