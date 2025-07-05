@@ -43,7 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "AAVISHKAR SEASON-4 FLASH MOB POSTER", category: "fest", img: "./assests/AAVISHKAR FLASH MOB POSTER.png", desc: "AAVISHKAR SEASON-4 flash mob which completely designed a party theme", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DHGCd10hm8E/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
         { name: "AAVISHKAR SEASON-4 NON-TECHNICAL QUIZ POSTER", category: "fest", img: "./assests/AAVISHKAR NON-TECHNICAL QUIZ POSTER.png", desc: "AAVISHKAR SEASON-4 flash mob which completely designed a party theme", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DHGCd10hm8E/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
         { name: "AAVISHKAR SEASON-4 BEST OUT OF WASTE", category: "fest", img: "./assests/Best Out of Waste.png", desc: "AAVISHKAR SEASON-4 flash mob which completely designed a party theme", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DHGCd10hm8E/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-        
+        { name: "CAMPA COLA DESIGN", category: "flyer-posters", img: "./assests/CAMPA-COLA.png", desc: "Campa cola conceptual inspirational flyer design", designer: "5Star Designs", link: "#", social: "https://www.instagram.com/p/DK6HgTRyq5T/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+        { name: "DONUT DESIGN", category: "flyer-posters", img: "./assests/donut poster.jpg", desc: "donut flyer design with minimilastic and candy theme", designer: "5Star Designs", link: "#", social: "" },
+        { name: "NIKE AIR MAX DNX LEGO", category: "flyer-posters", img: "./assests/Nike Air Max Dn x LEGO.jpg", desc: "Nike air max conceptual and branding flyer design", designer: "5Star Designs", link: "#", social: "" },
+
          
    ];
     
