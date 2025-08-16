@@ -58,31 +58,31 @@
 
         <!-- Modal (Design Preview) -->
     <div id="modal" class="modal" role="dialog" aria-hidden="true">
-        <div class="modal-overlay" id="modalOverlay"></div>
-        <div class="modal-content" role="document">
-            <button id="closeModal" class="close-btn" aria-label="Close Modal">&times;</button>
-            <div class="modal-body">
-                <!-- Left Side: Image -->
-                <div class="modal-left">
-                    <img id="modalImage" src="" alt="Full Design" loading="lazy">
-                    <span class="watermark">DesignsOf5Star</span> 
-                </div>
-                <!-- Right Side: Design Details -->
-                <div class="modal-right">
-                    <h2 id="designTitle" class="design-title"></h2>
-                    <p id="designDescription" class="design-description"></p>
-                    <p><strong>Category:</strong> <span id="designCategory"></span></p>
-                    <p><strong>Designer:</strong> <span id="designerDetails"></span></p>
-                    <p><strong>Design Links:</strong> <a href="#" id="designLinks" target="_blank">View</a></p>
-                    <p><strong>Social Links:</strong> <a href="#" id="socialLinks" target="_blank">View</a></p>
-                    <div class="modal-buttons">
-                        <a href="index.html#contact" id="contactBtn" class="btn contact-btn">Contact Us</a>
-                        
-                    </div>
-                </div>
-            </div>
+    <div class="modal-overlay" id="modalOverlay"></div>
+    
+    <div class="modal-box">
+        <!-- Close Button -->
+        <button id="closeModal" class="close-btn" aria-label="Close Modal">&times;</button>
+
+        <!-- Left Side: Large Image -->
+        <div class="modal-image">
+            <img id="modalImage" src="" alt="Full Design" loading="lazy">
+            <span class="watermark">DesignsOf5Star</span> 
+        </div>
+
+        <!-- Right Side: Details -->
+        <div class="modal-info">
+            <h2 id="designTitle"></h2>
+            <p id="designDescription"></p>
+            <div class="detail"><strong>Category:</strong> <span id="designCategory"></span></div>
+            <div class="detail"><strong>Designer:</strong> <span id="designerDetails"></span></div>
+            <div class="detail"><strong>Design Link:</strong> <a href="#" id="designLinks" target="_blank">View</a></div>
+            <div class="detail"><strong>Social Link:</strong> <a href="#" id="socialLinks" target="_blank">View</a></div>
+            
+            <a href="index.html#contact" class="contact-btn">Contact Us</a>
         </div>
     </div>
+</div>
 
 
     <!-- Footer -->
