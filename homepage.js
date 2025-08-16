@@ -347,5 +347,4 @@ window.onload = function () {
 document.getElementById("notificationButton").addEventListener("click", toggleNotifications);
 
     
-    
 });
